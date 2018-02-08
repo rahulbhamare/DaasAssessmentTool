@@ -1,0 +1,28 @@
+{
+  "configfiles": [
+    {
+      "name": "DAAS",
+      "purpose": "Connecting DAAS end points :",
+      "path": "InputJsonFiles\\https_tests_daas.json",      
+      "type": "http"
+    },
+    {
+      "name": "TPM",
+      "purpose": "Connecting TPM end points :",
+      "path": "InputJsonFiles\\https_tests_tpm.json",      
+      "type": "http"
+    },
+    {
+      "name": "Proxy",
+      "purpose": "Connecting end points through Proxies :",
+      "path": "InputJsonFiles\\https_tests_proxy.json",
+      "type": "http"
+    },
+    {
+      "name": "TM client Log",
+      "purpose": "Generating TM client Log",
+      "path": "InputJsonFiles\\command_tests_cases.json",      
+      "type": "command"
+    }
+  ]
+}

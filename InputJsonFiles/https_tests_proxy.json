@@ -1,0 +1,15 @@
+{
+  "testcases": [
+    {
+      "name": "HP Daas",
+      "type": "http",
+      "target": "http://jenkins-server.lightaria.com:8080/login",      
+      "port": 8080,
+      "proxyserver":"web-proxy.in.hpicorp.net:8080",
+      "username": "",
+      "password": "",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+﻿{
+  "testcases": [
+    {
+      "name": "My test case different return code",
+      "type": "command",
+      "command": "xcopy",
+      "params": "",
+      "expected_return_code": 4
+    },
+    {
+      "name": "My test case zero return code",
+      "type": "command",
+      "command": "cmd.exe",
+      "params": "/C",
+      "expected_return_code": 0
+    }
+  ]
+}

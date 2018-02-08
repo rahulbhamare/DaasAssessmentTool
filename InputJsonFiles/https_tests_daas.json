@@ -1,0 +1,209 @@
+{
+  "testcases": [
+    {
+      "name": "HP Daas",
+      "type": "http",
+      "target": "https://www.hpdaas.com",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Shavlik",
+      "type": "http",
+      "target": "http://xml.shavlik.com/data/versions/hfversions.xml",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Shavlik HTTPS",
+      "type": "http",
+      "target": "https://xml.shavlik.com/data/versions/hfversions.xml",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Shavlik New Domain",
+      "type": "http",
+      "target": "https://content.ivanti.com/data/versions/hfversions.xml",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Analytics config/client",
+      "type": "http",
+      "target": "https://d7l6d3yk4tkv4.cloudfront.net/",
+      "expected_response_code": 403,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Client updates",
+      "type": "http",
+      "target": "https://s3-us-west-2.amazonaws.com/repo.hptouchpointmanager.com/client/Hewlett-Packard/HPTA/1.0.0.172/TAInstaller.exe.hpsign",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert Validation - hpdaas.com",
+      "type": "http",
+      "target": "http://ocsp.sca1b.amazontrust.com",
+      "expected_response_code": 200,
+      "notes": "Also content.ivanti.com"
+    },
+    {
+      "name": "Cert Validation - hpdaas.com CRT",
+      "type": "http",
+      "target": "http://crt.sca1b.amazontrust.com/sca1b.crt",
+      "expected_response_code": 200,
+      "notes": "Also content.ivanti.com"
+    },
+    {
+      "name": "Cert Validation - hpdaas.com CRL",
+      "type": "http",
+      "target": "http://crl.sca1b.amazontrust.com/sca1b.crl",
+      "expected_response_code": 200,
+      "notes": "Also content.ivanti.com (and amazon chain as well)"
+    },
+    {
+      "name": "Cert Validation - hpdaas.com Amazon",
+      "type": "http",
+      "target": "http://ocsp.rootca1.amazontrust.com",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert Validation - hpdaas.com Amazon CER",
+      "type": "http",
+      "target": "http://crt.rootca1.amazontrust.com/rootca1.cer",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert Validation - hpdaas.com Amazon CRL",
+      "type": "http",
+      "target": "http://crl.rootca1.amazontrust.com/rootca1.crl",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert Validation - hpdaas.com Amazon Root CA 1 OCSP",
+      "type": "http",
+      "target": "http://ocsp.rootg2.amazontrust.com",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert Validation - hpdaas.com Amazon Root CA 1 CER",
+      "type": "http",
+      "target": "http://crt.rootg2.amazontrust.com/rootg2.cer",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert Validation - hpdaas.com Amazon Root CA 1 CRL",
+      "type": "http",
+      "target": "http://crl.rootg2.amazontrust.com/rootg2.crl",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert Validation - hpdaas.com Amazon Root CA 1 OCSP",
+      "type": "http",
+      "target": "http://ocsp.rootg2.amazontrust.com",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert Validation - hpdaas.com Amazon Root CA 1 CER",
+      "type": "http",
+      "target": "http://crt.rootg2.amazontrust.com/rootg2.cer",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert Validation - hpdaas.com Amazon Root CA 1 CRL",
+      "type": "http",
+      "target": "http://crl.rootg2.amazontrust.com/rootg2.crl",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert verification - Starfield",
+      "type": "http",
+      "target": "http://o.ss2.us",
+      "expected_response_code": 301,
+      "redirect_location": "http://www.starfieldtech.com/",
+      "notes": "Check header for additional verification?"
+    },
+    {
+      "name": "Cert verification - Starfield",
+      "type": "http",
+      "target": "http://x.ss2.us/x.cer",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - Starfield",
+      "type": "http",
+      "target": "http://s.ss2.us/r.crl",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - AWS and Parent",
+      "type": "http",
+      "target": "http://ocsp.digitcert.com",
+      "expected_response_code": 302,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - AWS",
+      "type": "http",
+      "target": "http://crl3.digicert.com/DigiCertBaltimoreCA-2G2.crl",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - AWS",
+      "type": "http",
+      "target": "http://crl4.digicert.com/DigiCertBaltimoreCA-2G2.crl",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - AWS",
+      "type": "http",
+      "target": "http://cacerts.digicert.com/DigiCertBaltimoreCA-2G2.crt",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - AWS Parent",
+      "type": "http",
+      "target": "http://crl3.digicert.com/Omniroot2025.crl",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+
+    {
+      "name": "Cert verification - Shavlik",
+      "type": "http",
+      "target": "http://gn.symcb.com",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - Shavlik",
+      "type": "http",
+      "target": "http://g2.symcb.com",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - Shavlik",
+      "type": "http",
+      "target": "http://g1.symcb.com",
+      "expected_response_code": 200,
+      "notes": ""
+    }
+  ]
+}
