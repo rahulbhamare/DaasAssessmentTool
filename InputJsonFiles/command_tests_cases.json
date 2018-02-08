@@ -1,0 +1,11 @@
+{
+  "testcases": [
+    {
+      "name": "HPLogReportTool",
+      "type": "command",
+      "command": "HPLogReportTool\\HPLogReportTool.exe",
+      "expected_response_code": 0,
+      "params" : ""
+    }
+  ]
+}

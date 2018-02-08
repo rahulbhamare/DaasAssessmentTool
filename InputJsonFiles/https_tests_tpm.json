@@ -1,0 +1,102 @@
+{
+  "testcases": [
+    {
+      "name": "TPM",
+      "type": "http",
+      "target": "https://www.hptouchpointmanager.com",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Shavlik",
+      "type": "http",
+      "target": "http://xml.shavlik.com/data/versions/hfversions.xml",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Analytics config/client",
+      "type": "http",
+      "target": "https://d7l6d3yk4tkv4.cloudfront.net/",
+      "expected_response_code": 403,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Client updates",
+      "type": "http",
+      "target": "https://s3-us-west-2.amazonaws.com/repo.hptouchpointmanager.com/client/Hewlett-Packard/HPTA/1.0.0.172/TAInstaller.exe.hpsign",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Cert verification",
+      "type": "http",
+      "target": "http://ss.symcd.com",
+      "expected_response_code": 200,
+      "notes": "Check header for additional verification?"
+    },
+    {
+      "name": "Cert verification",
+      "type": "http",
+      "target": "http://s2.symcb.com",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification",
+      "type": "http",
+      "target": "http://s1.symcb.com",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - AWS",
+      "type": "http",
+      "target": "http://crl3.digicert.com/DigiCertBaltimoreCA-2G2.crl",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - AWS",
+      "type": "http",
+      "target": "http://crl4.digicert.com/DigiCertBaltimoreCA-2G2.crl",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - AWS",
+      "type": "http",
+      "target": "http://ocsp.digitcert.com",
+      "expected_response_code": 302,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - AWS",
+      "type": "http",
+      "target": "http://cacerts.digitcert.com",
+      "expected_response_code": 302,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - Shavlik",
+      "type": "http",
+      "target": "http://gn.symcb.com",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - Shavlik",
+      "type": "http",
+      "target": "http://g2.symcb.com",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Cert verification - Shavlik",
+      "type": "http",
+      "target": "http://g1.symcb.com",
+      "expected_response_code": 200,
+      "notes": ""
+    }
+  ]
+}

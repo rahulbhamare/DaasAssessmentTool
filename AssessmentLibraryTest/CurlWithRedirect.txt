@@ -1,0 +1,2113 @@
+﻿HTTP/1.1 301 Moved Permanently
+Content-Type: text/html; charset=iso-8859-1
+Content-Length: 237
+Connection: keep-alive
+Date: Sun, 31 Dec 2017 23:45:20 GMT
+Server: Apache
+Location: http://www.starfieldtech.com/
+Age: 2151
+X-Cache: Hit from cloudfront
+Via: 1.1 1f39c56d77dfb02cff492739fe4f5930.cloudfront.net (CloudFront)
+X-Amz-Cf-Id: YlkHq68Dk5mvzrU7RiAMzgZgYsB56t-A8bnjGUW3xjIyq3fh7EXKbQ==
+
+HTTP/1.1 301 Moved Permanently
+Server: nginx
+Date: Mon, 01 Jan 2018 00:21:12 GMT
+Content-Type: text/html
+Content-Length: 178
+Connection: keep-alive
+Location: https://www.starfieldtech.com/
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-Sucuri-ID: 12014
+
+HTTP/1.1 301 Moved Permanently
+Server: nginx
+Date: Mon, 01 Jan 2018 00:21:12 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 0
+Connection: keep-alive
+Location: https://starfieldtech.com/
+X-Sucuri-Cache: HIT
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-Sucuri-ID: 12014
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 01 Jan 2018 00:21:12 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Link: <https://starfieldtech.com/wp-json/>; rel="https://api.w.org/", <https://starfieldtech.com/>; rel=shortlink
+X-Sucuri-Cache: HIT
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-Sucuri-ID: 12014
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://starfieldtech.com/xmlrpc.php" />
+<!--[if lt IE 9]>
+	<script src="https://starfieldtech.com/wp-content/themes/bb-theme/js/html5shiv.js"></script>
+	<script src="https://starfieldtech.com/wp-content/themes/bb-theme/js/respond.min.js"></script>
+<![endif]-->
+<title>Starfield Technologies</title>
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Starfield Technologies &raquo; Feed" href="https://starfieldtech.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Starfield Technologies &raquo; Comments Feed" href="https://starfieldtech.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/starfieldtech.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.3"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='font-awesome-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=1.10.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='foundation-icons-css'  href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css?ver=1.10.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='fl-builder-layout-282-css'  href='https://starfieldtech.com/wp-content/uploads/bb-plugin/cache/282-layout.css?ver=71dcf6a5a09ef2a9cd793d04179da59a' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://starfieldtech.com/wp-includes/css/dashicons.min.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='rstore-css'  href='https://starfieldtech.com/wp-content/plugins/reseller-store/assets/css/store.min.css?ver=0.2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='fl-builder-google-fonts-a27320e66d904072ce43236926072c93-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C700&#038;ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='mono-social-icons-css'  href='https://starfieldtech.com/wp-content/themes/bb-theme/css/mono-social-icons.css?ver=1.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-magnificpopup-css'  href='https://starfieldtech.com/wp-content/plugins/bb-plugin/css/jquery.magnificpopup.css?ver=1.10.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='https://starfieldtech.com/wp-content/themes/bb-theme/css/bootstrap.min.css?ver=1.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='fl-automator-skin-css'  href='https://starfieldtech.com/wp-content/uploads/bb-theme/skin-59c44373156c2.css?ver=1.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='fl-child-theme-css'  href='https://starfieldtech.com/wp-content/themes/bb-theme-child/style.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css'  href='https://starfieldtech.com/wp-content/plugins/bbpowerpack/assets/css/animate.min.css?ver=1655983236' type='text/css' media='all' />
+<script type='text/javascript' src='https://starfieldtech.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://starfieldtech.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://starfieldtech.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://starfieldtech.com/wp-includes/wlwmanifest.xml" /> 
+<link rel="canonical" href="https://starfieldtech.com/" />
+<link rel='shortlink' href='https://starfieldtech.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://starfieldtech.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fstarfieldtech.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://starfieldtech.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fstarfieldtech.com%2F&#038;format=xml" />
+		<style type="text/css" id="wp-custom-css">
+			@import url('https://fonts.googleapis.com/css?family=Abel|Oswald');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+
+
+body, input, select, textarea {
+    font-weight: 400;
+    font-family: 'Abel', sans-serif;
+    font-size: 15px;
+}
+
+h4, h5, h6 {
+    font-family: 'Abel', sans-serif;
+}
+.site-branding .site-title a {
+     font-family: 'Abel', sans-serif;
+    text-transform: uppercase;
+    font-size: 55px;
+    font-weight: 500;
+}
+.site-branding .site-title {
+    letter-spacing: -4px;
+    line-height: 0.8;
+}
+.sitelogo {
+    font-family: 'oswald';
+    text-transform: none;
+    font-weight: 500;
+    font-size: 50px;
+    color: #bf0000;
+    letter-spacing: -4px;
+    line-height: 1;
+
+}
+.sitelogo span {
+    font-family: 'oswald';
+    text-transform: none;
+    font-size: 50px;
+    font-weight: 100;
+    color: #000000;
+    letter-spacing: -3px;
+    line-height: 1;
+}
+.sitelogo  a {
+    color: #bb0000!important;
+}
+.sitelogo  a:hover {
+    color: #f7c71b!important;
+}
+
+.site-branding .site-title a {
+    display: none;
+}
+
+.fl-module-content {
+    margin: 10px;
+}
+.fl-module-content .widget.rstore-Product {
+    margin: -5px;
+}
+
+.page-id-196 .domainsearchbar {
+ display: none;
+}
+.page-id-196 .above-navigation {
+    padding-bottom: 8px;
+}
+
+.logininfo {
+    padding-bottom: 2px;
+    font-size: 18px;
+    color: #f7c71b;
+}
+.logininfo .fa {
+    padding: 0 4px;
+}
+/**---------------------------
+------------HEADER---------------**/
+
+
+.site-header {
+    border-bottom: none;
+}
+
+/*increases logo size*/
+.site-header .site-branding img {
+    height: 100px;
+    margin-top: -5px;
+    margin-bottom: 0px;
+}
+
+/**-------------NAV-------------------**/
+
+.main-navigation ul.nav-menu>li{
+padding: 0 10px;
+}
+
+.main-navigation ul.nav-menu>li a {
+ font-family: oswald;
+  font-size: 15px;
+  
+}
+section.pharmacy-secondary-navigation {
+    display: none;
+}
+
+/*----disregard unless using secondary nav---
+section.pharmacy-secondary-navigation {
+    margin-bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    font-size: 20px;
+}
+.secondary-navigation ul.menu > li {
+    margin: 0 5px;
+}
+.secondary-navigation ul.menu a {
+    padding: 5px 0;
+}
+------------------------------------*/
+
+.main-navigation ul.nav-menu a:focus, .main-navigation ul.menu li.current-menu-ancestor > a {
+    color: #f7c71b!important;
+}
+
+
+/*----makes nav centered in WordPress Pharmacy----*/
+
+.primary-navigation {
+    text-align: center;
+}
+.main-navigation ul.menu, .main-navigation ul.nav-menu {
+    float: none;
+}
+.main-navigation ul.menu > li, .main-navigation ul.nav-menu > li {
+    float: none;
+}
+
+.sub-menu li a{
+ font-size: 14px!important;
+}
+
+.main-navigation ul.nav-menu a:focus,
+.main-navigation ul.menu li.current-menu-ancestor > a{
+color: #000;
+}
+.primary-navigation .fa {
+    font-size: 20px;
+    color: #fdcf28;
+    padding: 0 2px;
+}
+
+/**----------------TEXT FONT STYLE----------**/
+
+.col-md-12.text-center.clearfix {
+    font-size: 15px;
+}
+
+
+.fl-page-bar-text.fl-page-bar-text-1 {
+    font-family: arial;
+}
+
+.fl-callout-title{
+  font-family: 'oswald';
+  font-weight: 500;
+}
+
+
+h3{
+ font-family: 'oswald';
+}
+
+
+.contactinfo {
+font-size: 14px;
+font-family: oswald;
+color: #bf0000;
+}
+
+/**-------------FORMS-------------------**/
+
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="url"], textarea {
+    border-color: #999999;
+    border: 1px solid;
+}
+
+.widget_search form:before, .widget_product_search form:before {
+    color: #b00;
+    font-size: 16px;
+}
+
+.search-box {
+    margin-bottom: -12px;
+}
+
+.domain-result {
+    color: #2fb4cc;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+.rstore-domain-search .input-group .form-control {
+    margin-bottom: 0;
+    width: 98%;
+}
+.rstore-domain-search .domain-result {
+    float: left;
+    vertical-align: middle;
+    padding: 10px 10px 8px 8px;
+    width: 100%;
+    min-width: 290px;
+    border: 1px solid #e8e8e8;
+}
+.rstore-domain-search .domain-name {
+    padding: 5px 0;
+}
+.rstore-domain-search .rstore-message {
+    padding: 5px 10px;
+}
+form {
+    margin-bottom: 0;
+}
+
+
+/**------------FOOTER-------------**/
+.row.copyright {
+    background-color: #1b1b1b!important;
+}
+.site-info {
+    padding: 20px 0;
+}
+.site-footer .site-info .copyright {
+    font-size: 12px;
+  width: 100%;
+}
+
+.widget .widget-title{
+    border-left: none;
+ font-family: oswald;
+  font-size: 18px;
+}
+
+.widget_nav_menu ul li:before{
+ display: none;
+}
+
+.widget_nav_menu ul li a{
+  font-family: abel;
+  font-size: 16px;
+}
+
+.widget_nav_menu ul li{
+  margin-bottom: 0px;
+}
+
+.godaddy-badge{
+ display: none;
+}
+
+.widget {
+    margin-bottom: 20px;
+}
+
+/*------------------------------------------
+---------RESELLER WIDGET STYLING----------
+-----------------------------------*/
+
+
+.widget.rstore-Product {
+    text-align: center;
+    border-radius: 15px 15px 2px 2px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 2px 2px 3px #b9b9b9;
+    font-size: 16px;
+}
+
+.widget.rstore-Product h2.widgettitle {
+    background-color: #eee;
+    border-radius: 10px 10px 2px 2px;
+    padding: 10px 0px;
+    box-shadow: 0px 2px 1px 1px #d6d6d6;
+    margin-bottom: 10px;
+    font-family: oswald;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+img.attachment-thumbnail.size-thumbnail.wp-post-image {
+    margin: 8px auto;
+}
+.widget.rstore-Product p {
+    padding: 5px;
+    font-family: 'Abel', sans-serif;
+}
+.widget.rstore-Product ul {
+    padding: 0px 10px;
+    text-align: left;
+}
+
+.widget.rstore-Product ul li:before {
+    content: '\f14a';
+    font-family: 'fontawesome';
+    margin-right: 5px;
+    color: #f7c71b;
+    font-size: 20px;
+}
+.rstore-price {
+    font-size: 35px;
+}
+
+button.rstore-add-to-cart.button {
+    width: 100%;
+    border-radius: 3px;
+    border-color: #f7c71b!important;
+    box-shadow: 0px 1px 4px #afafaf;
+}
+
+.rstore-add-to-cart-form {
+    margin-bottom: -10px;
+
+}
+p.rstore-pricing {
+    background-color: #eee;
+    margin-bottom: 2px;
+}
+.fl-callout-text ul {
+    list-style-type: square!important;
+}
+.fl-callout-photo .fl-photo-crop-circle img {
+    border: 6px solid #ba0000;
+}
+
+/*----------------------------
+rearranging the product widgets
+------------------------------*/
+
+.widget.rstore-Product {
+    display: flex;
+    flex-direction: column;
+}
+
+.widget.rstore-Product > img.attachment-thumbnail.size-thumbnail.wp-post-image {
+    margin: 8px auto;
+    order: 1;
+}
+
+.widget.rstore-Product  > h2.widgettitle {
+    order: 0;
+}
+
+.widget.rstore-Product  > p.rstore-pricing {
+    order: 3;
+    background-color: #fff;
+}
+.widget.rstore-Product > .rstore-add-to-cart-form {
+    order: 3;
+    margin: 0px 9px -10px 9px;
+}
+.widget.rstore-Product > p {
+    order: 4;
+    margin-bottom: 2px;
+}
+.widget.rstore-Product  > ul {
+    order: 5;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+/*----------------------------
+END rearranging product widgets
+------------------------------*/
+
+
+
+/*----------ICON STYLING----------*/
+
+
+.pp-icon-list .pp-icon-list-items .pp-icon-list-item .pp-list-item-icon {
+    color: #f7c71b!important;
+}
+.fl-module-content .fl-icon i, .fl-module-content .fl-icon i:before {
+    color: #f7c71b!important;
+}
+
+.fl-accordion-button-icon, .fl-accordion-button-icon, .fl-accordion-button-icon, .fl-accordion-button-icon{
+ padding: 10px;
+}
+
+/*---------button styling--------------*/
+
+a.fl-button {
+    font-size: 16px!important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Oswald';
+}
+a.uabb-button.uabb-creative-button.uabb-creative-flat-btn.uabb-none-btn {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Oswald', sans-serif;
+}
+
+/*lgo carousel*/
+
+.pp-logos-content .pp-logo {
+    height: 100px!important;
+}
+.pp-logo.bx-clone {
+}
+
+.pp-logos-content.clearfix {
+    height: 100px;
+}
+
+/*disclaimer buttons*/
+.disclaimer a.uabb-button.uabb-creative-button.uabb-creative-flat-btn.uabb-none-btn.uabb-trigger {
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: transparent!important;
+}
+
+.page-id-8 .disclaimer a.uabb-button.uabb-creative-button.uabb-creative-flat-btn.uabb-none-btn.uabb-trigger {
+    background-color: #ffd400!important;
+ margin-bottom: 20px;
+}
+
+/**---------------------------------
+--------------SEARCH POPUP------------------
+-------------------------------------**/
+#blackout {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+  display: none;
+}
+#closePop {
+    float: right;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    right: -25px;
+    top: -22px;
+ 
+}
+#closePop i {
+  color: red;
+ font-size: 25px;
+  cursor: pointer;
+}
+#popResults {
+    width: 35vw;
+    height: auto;
+    position: fixed;
+    top: 180px;
+    left: 34vw;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 99999;
+    padding: 20px;
+    min-width: 345px;
+ display: none;
+}
+
+#popResults .domain-result {
+    float: right;
+    vertical-align: middle;
+    padding: 10px 10px 8px 8px;
+    width: 100%;
+    min-width: 290px;
+    border: 1px solid #e8e8e8;
+}
+.salePrice {
+    display: block;
+    float: right;
+    font-size: 20px;
+    font-family: Oswald;
+    text-transform: uppercase;
+  color: #2eb343;
+}
+.domain-name {
+    font-size: 20px;
+    font-family: Oswald;
+    text-transform: none;
+    color: #353535;
+}
+
+/*-----gallery images--------*/
+
+.mfp-wrap {
+    top: 15%;
+    max-height: 700px;
+}
+.uabb-photo-gallery-caption {
+    background-color: transparent!important;
+}
+
+
+
+
+
+/************Large Screens*****************/
+
+@media screen and (min-width: 769px){
+
+.contactinfo.mobile {
+    display: none;
+}
+
+body.page-template.page-template-template-fullwidth.page-template-template-fullwidth-php.page.storefront-full-width-content.-sidebar.sp-header-sticky.customize-support div#page {
+    padding-top: 115px!important;
+}
+
+#godaddy-security-badge.godaddy-security-relative {
+    margin-left: 25px!important;
+}
+
+/*--------to send the above-nav textwidgets to the right in the same row as the site-branding- if there are more than one and want it to look evenly distributed----------*/
+
+.site-header .site-branding, .site-header .col-full > .site-logo-anchor, .site-header .col-full > .site-logo-link, .site-header .col-full > .custom-logo-link {
+    width: 23%;
+    margin-right: 0px;
+}
+
+.sitelogo {
+    width: 28%;
+    margin-top: 10px;
+    display: inline-block;
+  text-align: left;
+ float: left;
+}
+.domainsearchbar {
+    width: 52%;
+    margin-top: 15px;
+    display: inline-block;
+ float: left;
+}
+.contactinfo {
+    margin-top: 3px;
+    text-align: right;
+    width: 20%;
+    display: inline-block;
+  float: right;
+}
+
+/*makes social icons or buttons in widget area unlogo and above nav float to the right to decrease the nav height*/
+
+.above-navigation {
+    width: 100%;
+    clear: none;
+    float: right;
+    text-align: right;
+    margin-top: 0px;
+}
+
+  /*makes the header on homepage semi-transparent*/
+  .page-template-homepage2 #masthead.site-header:not(.sticky-header) .navbar-inner-wrapper, .page-template-transparent-menu #masthead.site-header:not(.sticky-header) .navbar-inner-wrapper, .page-template-template-homepage #masthead.site-header:not(.sticky-header) .navbar-inner-wrapper {
+    top: -32px;
+    background-color: rgba(255, 255, 255, 0.8);
+  padding-top: 10px;
+}
+header#masthead.site-header.sticky-header {
+    top: 0px;
+    background-color: rgba(255, 255, 255, 0.8);
+  padding-top: 5px;
+}
+
+.pharmacy-primary-navigation {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.page-id-8 .pharmacy-primary-navigation {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.main-navigation ul.nav-menu>li {
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+
+/*-----HEADER------*/
+.sp-header-sticky .site-header {
+    top: 32px;
+}
+.site-header {
+    padding-top: 0;
+}
+
+.site-footer .footer-widgets {
+    padding-top: 20px;
+}
+
+.mimi_field.required {
+    width: 80%;
+    float: left;
+}
+.mimi_field {
+    padding: 10px;
+}
+.mimi_field input#webform_submit_button {
+    width: 18%;
+    float: right;
+    margin-top: 25px;
+}
+
+.mimi_field input#signup_email {
+    padding-left: 10px;
+}
+
+/**-----------------Large Screens MIN-HEIGHTS on all product widgets per page--------------
+-------------------------------------**/
+
+.fl-module-content .widget.rstore-Product {
+    margin: -5px;
+    min-height: 730px;
+}
+
+/*WordPress*/
+.page-id-18 .fl-module-content .widget.rstore-Product {
+    min-height: 670px;
+}
+
+/*cPanel*/
+.page-id-10 .fl-module-content .widget.rstore-Product {
+    min-height: 700px;
+}
+
+/*Plesk*/
+.page-id-12 .fl-module-content .widget.rstore-Product {
+    min-height: 745px;
+}
+
+/*WSB*/
+.page-id-16 .fl-module-content .widget.rstore-Product {
+    min-height: 680px;
+}
+
+/*SEV*/
+.page-id-36 .fl-module-content .widget.rstore-Product {
+    min-height: 630px;
+}
+
+/*SiteLock*/
+.page-id-30 .fl-module-content .widget.rstore-Product {
+    min-height: 610px;
+}
+
+/*SSL*/
+.page-id-32 .fl-module-content .widget.rstore-Product {
+    min-height: 660px;
+}
+
+/*QSC*/
+.page-id-20 .fl-module-content .widget.rstore-Product {
+    min-height: 570px;
+}
+
+/*Online Storage*/
+.page-id-38 .fl-module-content .widget.rstore-Product {
+    min-height: 500px;
+}
+
+/*Online Calendar*/
+.page-id-42 .fl-module-content .widget.rstore-Product {
+    min-height: 585px;
+}
+
+/*FAX*/
+.page-id-26 .fl-module-content .widget.rstore-Product {
+    min-height: 585px;
+}
+
+/*Email*/
+.page-id-22 .fl-module-content .widget.rstore-Product {
+    min-height: 735px;
+}
+
+/*Email Marketing*/
+.page-id-34 .fl-module-content .widget.rstore-Product {
+    min-height: 880px;
+}
+
+}
+
+/************Medium Screens*****************/
+
+@media screen and (max-width: 1195px) and (min-width: 945px){
+
+.sitelogo {
+    width: 30%;
+    font-size: 50px;
+}
+.sitelogo span {
+    font-size: 50px;
+}
+.contactinfo {
+    width: 25%;
+    font-size: 13px;
+}
+.domainsearchbar {
+    width: 45%;
+}
+.main-navigation ul.nav-menu>li {
+    padding: 0;
+}
+.main-navigation ul.nav-menu>li a {
+    font-size: 13px;
+}
+.main-navigation ul.menu > li, .main-navigation ul.nav-menu > li {
+    margin: 0 8px;
+}
+.widget.rstore-Product h2.widgettitle {
+    font-size: 18px;
+}
+.primary-navigation .fa {
+    font-size: 16px;
+}
+.main-navigation ul.menu > li.menu-item-has-children > a:after, .main-navigation ul.menu > li.page_item_has_children > a:after, .main-navigation ul.nav-menu > li.menu-item-has-children > a:after, .main-navigation ul.nav-menu > li.page_item_has_children > a:after {
+    margin-left: 5px;
+}
+}
+
+@media screen and (max-width: 945px) and (min-width: 769px){
+
+.sitelogo {
+    width: 28%;
+    font-size: 40px;
+}
+.sitelogo span {
+    font-size: 40px;
+}
+.contactinfo {
+    width: 27%;
+    font-size: 12px;
+}
+.domainsearchbar {
+    width: 45%;
+}
+.widget.rstore-Product h2.widgettitle {
+    font-size: 16px;
+}
+.rstore-domain-search .form-control {
+    font-size: 12px;
+}
+.primary-navigation .fa {
+    font-size: 16px;
+}
+.main-navigation ul.nav-menu>li {
+    padding: 0;
+}
+.main-navigation ul.nav-menu>li a {
+    font-size: 13px;
+}
+.main-navigation ul.menu > li, .main-navigation ul.nav-menu > li {
+    margin: 0 8px;
+}
+.widget.rstore-Product h2.widgettitle {
+    font-size: 18px;
+}
+.main-navigation ul.menu > li.menu-item-has-children > a:after, .main-navigation ul.menu > li.page_item_has_children > a:after, .main-navigation ul.nav-menu > li.menu-item-has-children > a:after, .main-navigation ul.nav-menu > li.page_item_has_children > a:after {
+    margin-left: 5px;
+}
+}
+
+
+/************Tablet*****************/
+
+
+
+@media screen and (max-width: 768px){
+
+header#masthead {
+    position: static!important;
+}
+header#masthead.site-header.sticky-header {
+    position: static!important;
+}
+
+.fl-builder-content .fl-node-595df2e986561, .fl-builder-content .fl-node-596fef9fcc1a8, .fl-builder-content .fl-node-597000fae6a9a, .fl-builder-content .fl-node-5970014b90518, .fl-builder-content .fl-node-5970019df0366, .fl-builder-content .fl-node-59700175c8ad3, .fl-builder-content .fl-node-597001c52272f, .fl-builder-content .fl-node-597001fe94671, .fl-builder-content .fl-node-597001dfa6bb5, .fl-builder-content .fl-node-5970021f83e65, .fl-builder-content .fl-node-59700259b8773, .fl-builder-content .fl-node-597002ca2bca8, .fl-builder-content .fl-node-597002eb80bbe, .fl-builder-content .fl-node-597003573271f  {
+    float: none;
+}
+
+
+.contactinfo.lgscreen {
+    display: none;
+}
+
+.snsupport {
+    width: 30%;
+    display: inline;
+    text-align: center;
+    padding: 0 10px;
+    margin: auto;
+}
+
+.billing {
+    width: 30%;
+    display: inline;
+    text-align: center;
+    padding: 0 10px;
+    margin: auto;
+}
+
+.hosting {
+    width: 30%;
+    display: inline;
+    text-align: center;
+    padding: 0 10px;
+    margin: auto;
+}
+
+
+.footer-contact-us.col-3{
+padding-bottom: 20px;
+}
+
+.site-footer .widget .widget-title {
+    font-size: 12px;
+}
+.site-footer .widget_nav_menu ul li a {
+    font-size: 11px;
+    margin-left: 0px;
+}
+
+
+  /*center the footer nav on mobile*/
+.site-footer .widget .widget-title {
+    color: #f7b91a;
+    text-align: center;
+}
+.widget_nav_menu ul li {
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+.widget_archive ul, .widget_categories ul, .widget_links ul, .widget_nav_menu ul, .widget_pages ul, .widget_recent_comments ul, .widget_recent_entries ul {
+    margin: auto;
+}
+.widget_archive ul li, .widget_categories ul li, .widget_links ul li, .widget_nav_menu ul li, .widget_pages ul li, .widget_recent_comments ul li, .widget_recent_entries ul li {
+    text-align: center;
+}
+  
+  /*some newer WPs are fine with just the cSS below to center the footer nav on mobile*/
+  
+#menu-menu-2 li {
+    text-align: center;
+    padding-left: 0;
+}
+  
+
+/*NAV*/
+button.menu-toggle {
+background: #bf0000!important;
+}
+
+.textwidget p{
+  color: #bf0000;
+}
+
+.main-navigation ul li a:hover, .main-navigation ul li:hover > a{
+ color: #bf0000;
+}
+  /*removes paper icons in mobile nav*/
+.main-navigation ul li a:before {
+    display: none;
+}
+  
+
+    /*takes away the stretched looking logo on mobile view*/
+.site-header .custom-logo-link img, .site-header .site-logo-anchor img, .site-header .site-logo-link img {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+}
+
+  /*makes small columns full width on ipad view*/
+  .fl-col-small {
+    max-width: 100%;
+}
+
+
+.sitelogo {
+    font-size: 40px;
+    color: #bf0000;
+    margin-bottom: 10px;
+}
+.sitelogo span {
+    font-size: 40px;
+    font-weight: 100;
+    color: #000000;
+}
+.contactinfo {
+    font-size: 12px;
+    color: #bf0000;
+}
+.handheld-navigation {
+    background-color: #525252;
+}
+.menu-item-has-children .sub-menu, .main-navigation ul li.smm-active ul.sub-menu .smm-mega-menu {
+    margin: 0;
+    padding-left: 10px;
+    border: none;
+    box-shadow: none;
+}
+
+.rstore-domain-search .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.main-navigation .menu {
+    -webkit-padding-start: 0;
+}
+.main-navigation ul li a, ul.menu li a {
+    margin-left: 15px;
+}
+.main-navigation ul li a {
+    padding: 5px 0;
+    display: block;
+    font-size: 14px;
+}
+.sub-menu li a {
+    font-size: 12px!important;
+}
+
+.search-box {
+    margin-bottom: 0px;
+}
+
+
+/*------SEARCH POP UP ON TABLET--------*/
+
+#popResults {
+    width: 85%;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 99999;
+    padding: 20px;
+    min-width: 280px;
+    display: none;
+    margin: auto;
+}
+
+.mimi_field {
+    padding: 10px;
+    text-align: center;
+}
+.mimi_field input#signup_email {
+    text-align: center;
+}
+}
+
+@media screen and (max-width: 645px){
+
+.contactinfo {
+    font-size: 14px;
+}
+.billing {
+    display: none;
+}
+
+.hosting {
+    display: none;
+}
+
+h1.heading-title {
+    font-size: 30px;
+}
+h2.heading-title {
+    font-size: 25px;
+}
+
+}
+
+/************Mobile****************/
+@media screen and (max-width: 420px){
+
+.footer-contact-us.col-3 .block{
+width: 100%;
+}
+
+.rstore-domain-search .form-control {
+    font-size: 12px;
+}
+
+.rstore-domain-search .domain-result {
+    padding: 2px 5px;
+    width: 100%;
+    min-width: 270px;
+}
+.domain-result {
+    font-size: 12px;
+}
+
+
+/*------SEARCH POP UP ON MOBILE--------*/
+
+#popResults .domain-result {
+    float: right;
+    vertical-align: middle;
+    padding: 10px 10px 8px 8px;
+    width: 85%;
+    min-width: 240px;
+    border: 1px solid #e8e8e8;
+}
+}
+
+
+/*-------------original price value css----------------*/
+span.listPrice s {
+    margin: 0px 10px 0px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #f00;
+}
+button.rstore-domain-buy-button.submit.button {
+    float: left;
+} 
+/*-------------end original price value css----------------*/
+ 
+		</style>
+	</head>
+
+<body class="home page-template-default page page-id-282 fl-builder fl-preset-dusk fl-full-width" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div class="fl-page">
+	<div class="fl-page-bar">
+	<div class="fl-page-bar-container container">
+		<div class="fl-page-bar-row row">
+			<div class="col-md-12 text-center clearfix"><div class="fl-page-bar-text fl-page-bar-text-1"><strong>Free 24/7 Customer Support:  <br>(480) 624-2500</div></div>					</div>
+	</div>
+</div><!-- .fl-page-bar --><header class="fl-page-header fl-page-header-primary fl-page-nav-centered fl-page-nav-toggle-button fl-page-nav-toggle-visible-mobile" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+	<div class="fl-page-header-wrap">
+		<div class="fl-page-header-container container">
+			<div class="fl-page-header-row row">
+				<div class="col-md-12 fl-page-header-logo-col">
+					<div class="fl-page-header-logo" itemscope="itemscope" itemtype="http://schema.org/Organization">
+						<a href="https://starfieldtech.com/" itemprop="url"><img class="fl-logo-img" itemscope itemtype="http://schema.org/ImageObject" src="https://starfieldtech.com/wp-content/uploads/2017/08/starfield-logo-1.png" data-retina="" alt="Starfield Technologies" /><meta itemprop="name" content="Starfield Technologies" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="fl-page-nav-wrap">
+		<div class="fl-page-nav-container container">
+			<nav class="fl-page-nav fl-nav navbar navbar-default" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".fl-page-nav-collapse">
+					<span>Menu</span>
+				</button>
+				<div class="fl-page-nav-collapse collapse navbar-collapse">
+					<ul id="menu-main-menu" class="nav navbar-nav menu"><li id="menu-item-258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-258"><a><div class="rstore-login-block" style="display: block;"><a class="login-link" href="https://account.secureserver.net/?plid=504762" rel="nofollow">My Account</a></div><div class="rstore-welcome-block" style="display: none;"><span class="welcome-message"><a class="login-link" href="https://account.secureserver.net/?plid=504762" rel="nofollow">Welcome Back</a></span>Â <span class="firstname">.</span>Â <span class="lastname">.</span><a class="logout-link" href="https://sso.secureserver.net/logout?plid=504762&amp;realm=idp&amp;app=www" rel="nofollow">Log Out</a></div></a></li>
+<li id="menu-item-257" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-257"><a href="https://cart.secureserver.net/EmptyCart.aspx?prog_id=504762&#038;isc=56797288.1">Â Â  <a href="https://cart.secureserver.net/?prog_id=504762">Cart <span class="widget rstore-cart hide-empty" style="display:none;">(<span class="rstore-cart-count">0</span>)</span> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></a></li>
+</ul>				</div>
+			</nav>
+		</div>
+	</div>
+</header><!-- .fl-page-header -->	<div class="fl-page-content" itemprop="mainContentOfPage">
+	
+		
+<div class="fl-content-full container">
+	<div class="row">
+		<div class="fl-content col-md-12">
+							<article class="fl-post post-282 page type-page status-publish hentry" id="fl-post-282" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+
+			<div class="fl-post-content clearfix" itemprop="text">
+		<div class="fl-builder-content fl-builder-content-282 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="282"><div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-59935721cac70 fl-row-bg-overlay" data-node="59935721cac70">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-59935721caca9" data-node="59935721caca9">
+			<div class="fl-col fl-node-59935721cacdf" data-node="59935721cacdf">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-pp-info-banner fl-node-5993592f87f9c" data-node="5993592f87f9c">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-info-banner-content static">
+	<div class="pp-info-banner-inner">
+						<div class="info-banner-wrap info-center animated" data-animation-class="none">
+			<div class="banner-title"><center>Secure. â€‹Fast. Low Price.</div>
+			<div class="banner-description"><center>Get the highest security levels for your websites at a great price. Our SSL certificates offer strong SHA-2 and 2048-bit encryption, virtually uncrackable. A Standard SSL takes just a few minutes to issue. We provide free 24/7 support via phone, chat and email. Plus, 30 days money-back guarantee on all of our SSL certificates. 
+</div>
+						<a class="banner-button" href="#singledomain" target="_self">
+				Get Started			</a>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div id="singledomain" class="fl-row fl-row-full-width fl-row-bg-color fl-node-599763739cf9e" data-node="599763739cf9e">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-599763739d2fe" data-node="599763739d2fe">
+			<div class="fl-col fl-node-599763739d336" data-node="599763739d336">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599763739d36d" data-node="599763739d36d">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h2 class="heading-title" style="text-align: center;"><strong><span class="title-text pp-primary-title">Protect transactions and customer data with a SSL Certificate<br />
+</span></strong></h2>
+<h4 class="heading-title" style="text-align: center;"><strong><span class="title-text pp-primary-title"><span style="color: #000000;">Let customers know their private details are safe. Same security as our competitors for up to 90% less.</span><br />
+</span></strong></h4>
+<p style="text-align: center;">
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5993631ebc38e" data-node="5993631ebc38e">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5993631ebffa3" data-node="5993631ebffa3">
+			<div class="fl-col fl-node-5993631ec00d2 fl-col-small" data-node="5993631ec00d2">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-widget fl-node-59936cfd059ab" data-node="59936cfd059ab">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-widget">
+<div class="widget rstore-Product"><img width="150" height="150" src="https://starfieldtech.com/wp-content/uploads/2017/08/33-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /><h2 class="widgettitle">Standard SSL (1-site)</h2><p style="padding-left: 30px"><b>Protect 1 site.</b></p>
+<ul>
+<li>Domain validation</li>
+<li>SHA-2 &amp; 2048-bit encryp.</li>
+<li>Boost SEO rankings</li>
+<li>Fast issuance in 5min</li>
+<li>Display HTTPS &amp; padlock</li>
+<li>Security trust seal</li>
+<li>Support unlimited servers</li>
+<li>Free unlimited reissues</li>
+<li>$100,000 warranty</li>
+</ul>
+<p class="rstore-pricing"><span class="rstore-price">$49.99</span> / per year</p>
+	<div class="rstore-add-to-cart-form">
+		<button class="rstore-add-to-cart button" data-id="ssl-standard" data-quantity="1" data-redirect="false">Add to cart</button>		<div class="rstore-loading rstore-loading-hidden" ></div>
+		<div class="rstore-message"></div>
+	</div>
+	</div></div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-5995dcb36cc04 fl-col-small" data-node="5995dcb36cc04">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-widget fl-node-5995dcad79267" data-node="5995dcad79267">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-widget">
+<div class="widget rstore-Product"><img width="150" height="150" src="https://starfieldtech.com/wp-content/uploads/2017/08/33-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /><h2 class="widgettitle">Standard SSL (5-site)</h2><p><strong>Protect 5 sites.</strong></p>
+<ul>
+<li>Domain validation</li>
+<li>SHA-2 &amp; 2048-bit encryp.</li>
+<li>Boost SEO rankings</li>
+<li>Fast issuance in 5min</li>
+<li>Display HTTPS &amp; padlock</li>
+<li>Security trust seal</li>
+<li>Support unlimited servers</li>
+<li>Free unlimited reissues</li>
+<li>$100,000 warranty</li>
+</ul>
+<p class="rstore-pricing"><span class="rstore-price">$119.99</span> / per year</p>
+	<div class="rstore-add-to-cart-form">
+		<button class="rstore-add-to-cart button" data-id="ssl-standard-ucc" data-quantity="1" data-redirect="false">Add to cart</button>		<div class="rstore-loading rstore-loading-hidden" ></div>
+		<div class="rstore-message"></div>
+	</div>
+	</div></div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-59990d3e85bed fl-col-small" data-node="59990d3e85bed">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-widget fl-node-59990d1a8686a" data-node="59990d1a8686a">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-widget">
+<div class="widget rstore-Product"><img width="150" height="150" src="https://starfieldtech.com/wp-content/uploads/2017/08/33-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /><h2 class="widgettitle">Standard SSL (Wildcard)</h2><p><b>Protect all sub-domains.</b></p>
+<ul>
+<li>Domain validation</li>
+<li>SHA-2 &amp; 2048-bit encryp.</li>
+<li>Boost SEO rankings</li>
+<li>Fast issuance in 5min</li>
+<li>Display HTTPS &amp; padlock</li>
+<li>Security trust seal</li>
+<li>Support unlimited servers</li>
+<li>Free unlimited reissues</li>
+<li>$100,000 warranty</li>
+</ul>
+<p class="rstore-pricing"><span class="rstore-price">$239.99</span> / per year</p>
+	<div class="rstore-add-to-cart-form">
+		<button class="rstore-add-to-cart button" data-id="ssl-standard-wildcard" data-quantity="1" data-redirect="false">Add to cart</button>		<div class="rstore-loading rstore-loading-hidden" ></div>
+		<div class="rstore-message"></div>
+	</div>
+	</div></div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-59976190d3ef3 fl-col-small" data-node="59976190d3ef3">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-widget fl-node-5997618a4ff0a" data-node="5997618a4ff0a">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-widget">
+<div class="widget rstore-Product"><img width="150" height="150" src="https://starfieldtech.com/wp-content/uploads/2017/08/Screen-Shot-2017-08-22-at-12.06.26-PM-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /><h2 class="widgettitle">Premium SSL (1-site)</h2><p><b>Protect 1 site.</b></p>
+<ul>
+<li>Extended validation</li>
+<li>SHA-2 &amp; 2048-bit encryp.</li>
+<li>Boost SEO rankings</li>
+<li>Display HTTPS &amp; padlock</li>
+<li>Green address bar</li>
+<li>Security trust seal</li>
+<li>Support unlimited servers</li>
+<li>Free unlimited reissues</li>
+<li>$1,000,000 warranty</li>
+</ul>
+<p class="rstore-pricing"><span class="rstore-price">$139.99</span> / per year</p>
+	<div class="rstore-add-to-cart-form">
+		<button class="rstore-add-to-cart button" data-id="ssl-premium" data-quantity="1" data-redirect="false">Add to cart</button>		<div class="rstore-loading rstore-loading-hidden" ></div>
+		<div class="rstore-message"></div>
+	</div>
+	</div></div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-599761959ef9b fl-col-small" data-node="599761959ef9b">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-widget fl-node-59976189d4b8f" data-node="59976189d4b8f">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-widget">
+<div class="widget rstore-Product"><img width="150" height="150" src="https://starfieldtech.com/wp-content/uploads/2017/08/Screen-Shot-2017-08-22-at-12.06.26-PM-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" /><h2 class="widgettitle">Premium SSL (5-site)</h2><p><strong>Protect 5 sites.</strong></p>
+<ul>
+<li>Extended validation</li>
+<li>SHA-2 &amp; 2048-bit encryp.</li>
+<li>Boost SEO rankings</li>
+<li>Display HTTPS &amp; padlock</li>
+<li>Green address bar</li>
+<li>Security trust seal</li>
+<li>Support unlimited servers</li>
+<li>Free unlimited reissues</li>
+<li>$1,000,000 warranty</li>
+</ul>
+<p class="rstore-pricing"><span class="rstore-price">$349.99</span> / per year</p>
+	<div class="rstore-add-to-cart-form">
+		<button class="rstore-add-to-cart button" data-id="ssl-premium-ucc" data-quantity="1" data-redirect="false">Add to cart</button>		<div class="rstore-loading rstore-loading-hidden" ></div>
+		<div class="rstore-message"></div>
+	</div>
+	</div></div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-59992c84b6534 fl-row-bg-overlay" data-node="59992c84b6534">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-59992f0c91f6a" data-node="59992f0c91f6a">
+			<div class="fl-col fl-node-59992f0c92327" data-node="59992f0c92327">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-59992c84b7267" data-node="59992c84b7267">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h1 class="editor_big_thin" style="text-align: center;"><span class="editor_light_blue" style="color: #ffffff;">About our SSLs</span></h1>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-59992c84b71f8" data-node="59992c84b71f8">
+			<div class="fl-col fl-node-59992c84b7230 fl-col-small fl-col-has-cols" data-node="59992c84b7230">
+	<div class="fl-col-content fl-node-content">
+	
+<div class="fl-col-group fl-node-59992c84b7494 fl-col-group-nested" data-node="59992c84b7494">
+			<div class="fl-col fl-node-59992c84b74ca" data-node="59992c84b74ca">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-pp-iconlist fl-node-59992d963b27b" data-node="59992d963b27b">
+	<div class="fl-module-content fl-node-content">
+		
+<div class="pp-icon-list">
+	<ul class="pp-icon-list-items pp-list-type-icon">
+	
+		
+			<li class="pp-icon-list-item pp-icon-list-item-0">
+				<span class="pp-list-item-icon fa fa-check-square-o"></span>
+				<span class="pp-list-item-text">One SSL covers unlimited servers</span>
+			</li>
+
+		
+			<li class="pp-icon-list-item pp-icon-list-item-1">
+				<span class="pp-list-item-icon fa fa-check-square-o"></span>
+				<span class="pp-list-item-text">Work with all major browsers</span>
+			</li>
+
+		
+		</ul>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-59992f010d2e6 fl-col-small" data-node="59992f010d2e6">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-pp-iconlist fl-node-59992efa9a1cd" data-node="59992efa9a1cd">
+	<div class="fl-module-content fl-node-content">
+		
+<div class="pp-icon-list">
+	<ul class="pp-icon-list-items pp-list-type-icon">
+	
+		
+			<li class="pp-icon-list-item pp-icon-list-item-0">
+				<span class="pp-list-item-icon fa fa-check-square-o"></span>
+				<span class="pp-list-item-text">Cost up to 90% less</span>
+			</li>
+
+		
+			<li class="pp-icon-list-item pp-icon-list-item-1">
+				<span class="pp-list-item-icon fa fa-check-square-o"></span>
+				<span class="pp-list-item-text">Backed by industry-best 24/7 support</span>
+			</li>
+
+		
+		</ul>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-59992f055c8de fl-col-small" data-node="59992f055c8de">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-pp-iconlist fl-node-59992ef9d4523" data-node="59992ef9d4523">
+	<div class="fl-module-content fl-node-content">
+		
+<div class="pp-icon-list">
+	<ul class="pp-icon-list-items pp-list-type-icon">
+	
+		
+			<li class="pp-icon-list-item pp-icon-list-item-0">
+				<span class="pp-list-item-icon fa fa-check-square-o"></span>
+				<span class="pp-list-item-text">Strongest SHA-2 & 2048-bit encryption</span>
+			</li>
+
+		
+			<li class="pp-icon-list-item pp-icon-list-item-1">
+				<span class="pp-list-item-icon fa fa-check-square-o"></span>
+				<span class="pp-list-item-text">Come with site seal options</span>
+			</li>
+
+		
+		</ul>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-599931247b0c6 fl-visible-desktop-medium" data-node="599931247b0c6">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5999313b8916c" data-node="5999313b8916c">
+			<div class="fl-col fl-node-5999313b8953e" data-node="5999313b8953e">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-59937ed359ce0 fl-visible-desktop-medium" data-node="59937ed359ce0">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h1 class="editor_big_thin" style="text-align: center;"><span class="editor_light_blue">Ho</span>â€‹<span class="editor_light_blue">w </span>â€‹<span class="editor_light_blue">does SSL benefit me?</span></h1>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-5999312492d39" data-node="5999312492d39">
+			<div class="fl-col fl-node-59993124930cb fl-col-small" data-node="59993124930cb">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-59937a3c2b109 fl-visible-desktop-medium" data-node="59937a3c2b109">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fa fa-laptop"></i>
+			</span>
+
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-5999312493108 fl-col-small" data-node="5999312493108">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-59937b3777ec6 fl-visible-desktop-medium" data-node="59937b3777ec6">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fa fa-handshake-o"></i>
+			</span>
+
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-5999312493141 fl-col-small" data-node="5999312493141">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-59937b36a2d2a fl-visible-desktop-medium" data-node="59937b36a2d2a">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-graph-bar"></i>
+			</span>
+
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-599931249317a fl-col-small" data-node="599931249317a">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-59937b36440b4 fl-visible-desktop-medium" data-node="59937b36440b4">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-magnifying-glass"></i>
+			</span>
+
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-5999314a14120" data-node="5999314a14120">
+			<div class="fl-col fl-node-5999314a14587 fl-col-small" data-node="5999314a14587">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599931dede793" data-node="599931dede793">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p style="text-align: center;"><span class="editor_medium_gray2">Protect all sensitive dataÂ â€‹<br />
+passing </span><span class="editor_medium_gray2">thro</span>â€‹<span class="editor_medium_gray2">ugh the website</span></p>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-5999314a145c5 fl-col-small" data-node="5999314a145c5">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599931efa70dc" data-node="599931efa70dc">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p style="text-align: center;"><span class="editor_medium_gray2">Build cu</span>â€‹<span class="editor_medium_gray2">stomerÂ â€‹confidence<br />
+and trust</span></p>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-5999314a145fe fl-col-small" data-node="5999314a145fe">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599931ef360d7" data-node="599931ef360d7">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p style="text-align: center;"><span class="editor_medium_gray2">Increas</span>â€‹<span class="editor_medium_gray2">e salesÂ transactions</span></p>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-5999314a14636 fl-col-small" data-node="5999314a14636">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599931eead6f0" data-node="599931eead6f0">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p style="text-align: center;"><span class="editor_medium_gray2">Boost organic </span><span class="editor_medium_gray2">searchÂ </span><span class="editor_medium_gray2">ranking<br />
+on Google</span></p>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5993dbfee93c3 fl-visible-mobile" data-node="5993dbfee93c3">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5993dbfee99c3" data-node="5993dbfee99c3">
+			<div class="fl-col fl-node-5993dbfee99fb fl-col-has-cols" data-node="5993dbfee99fb">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-5993dbfee9a32" data-node="5993dbfee9a32">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h1 class="editor_big_thin" style="text-align: center;"><span class="editor_light_blue">Ho</span>â€‹<span class="editor_light_blue">w </span>â€‹<span class="editor_light_blue">does ssl benefit me?</span></h1>
+</div>
+	</div>
+</div>
+
+<div class="fl-col-group fl-node-5993dbfee9ad4 fl-col-group-nested" data-node="5993dbfee9ad4">
+			<div class="fl-col fl-node-5993dbfee9b0a fl-col-small" data-node="5993dbfee9b0a">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-5993dbfee9b40" data-node="5993dbfee9b40">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fa fa-laptop"></i>
+			</span>
+
+		<div id="fl-icon-text-5993dbfee9b40" class="fl-icon-text">
+				<p style="text-align: center;"><span class="editor_medium_gray2">Protect all sensitive dataÂ â€‹<br />passing </span><span class="editor_medium_gray2">thro</span>â€‹<span class="editor_medium_gray2">ugh the website</span></p>			</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-icon fl-node-5993dbfee9b77" data-node="5993dbfee9b77">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fa fa-handshake-o"></i>
+			</span>
+
+		<div id="fl-icon-text-5993dbfee9b77" class="fl-icon-text">
+				<p style="text-align: center;"><span class="editor_medium_gray2">Build cu</span>â€‹<span class="editor_medium_gray2">stomerÂ â€‹confidence <br />and trust</span></p>			</div>
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-5993dbfee9bad fl-col-small" data-node="5993dbfee9bad">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-5993dbfee9be3" data-node="5993dbfee9be3">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-graph-bar"></i>
+			</span>
+
+		<div id="fl-icon-text-5993dbfee9be3" class="fl-icon-text">
+				<p style="text-align: center;"><span class="editor_medium_gray2">Increas</span>â€‹<span class="editor_medium_gray2">e salesÂ transactions</span></p>			</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-icon fl-node-5993dbfee9c19" data-node="5993dbfee9c19">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-magnifying-glass"></i>
+			</span>
+
+		<div id="fl-icon-text-5993dbfee9c19" class="fl-icon-text">
+				<p style="text-align: center;"><span class="editor_medium_gray2">Boost organic </span><span class="editor_medium_gray2">searchÂ </span><span class="editor_medium_gray2">ranking <br />on Google</span></p>			</div>
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-599380db9f38d" data-node="599380db9f38d">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-599380dba5f3f" data-node="599380dba5f3f">
+			<div class="fl-col fl-node-599380dba6167 fl-col-has-cols" data-node="599380dba6167">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599380d60c841" data-node="599380d60c841">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h1 class="editor_big_thin" style="text-align: center;"><span class="editor_light_blue">Ho</span>â€‹<span class="editor_light_blue">w </span>â€‹<span class="editor_light_blue">does it work?</span></h1>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-599381ca84cdf" data-node="599381ca84cdf">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p class="editor_big_thin" style="text-align: center;"><span style="font-size: 20px; color: #000000;"><span class="editor_dark_blue">Site</span><span class="editor_dark_blue"> credibility is established by checking the digital certificate.</span></span></p>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5993829a86a41" data-node="5993829a86a41">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p style="text-align: center;"><span style="color: #000000; font-size: 16px;"><span class="editor_medium_gray2">An Extended Validation (EV) SSL certificate activates the green address bar in the browser â€“ indicating the highest level of authentication and trust. Premium (EV) SSL certific</span>a<span class="editor_medium_gray2">tes are strongly recommended for eCommerce sites.</span></span></p>
+</div>
+	</div>
+</div>
+
+<div class="fl-col-group fl-node-5993830069365 fl-col-group-nested" data-node="5993830069365">
+			<div class="fl-col fl-node-5993830069583 fl-col-small" data-node="5993830069583">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-5993830b04298" data-node="5993830b04298">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-crown"></i>
+			</span>
+
+		<div id="fl-icon-text-5993830b04298" class="fl-icon-text">
+				<p style="text-align: center;"><span style="color: #000000;">The Certificate holder's<br />company name (Premium only)</span></p>			</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-icon fl-node-5993845b21d08" data-node="5993845b21d08">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-list-number"></i>
+			</span>
+
+		<div id="fl-icon-text-5993845b21d08" class="fl-icon-text">
+				<p style="text-align: center;"><span style="color: #000000;">The Certificate's serial number<br />â€‹and expiration date</span></p>			</div>
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-59938300695c0 fl-col-small" data-node="59938300695c0">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-59938452c4163" data-node="59938452c4163">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-key"></i>
+			</span>
+
+		<div id="fl-icon-text-59938452c4163" class="fl-icon-text">
+				<p style="text-align: center;"><span style="color: #000000; font-size: 16px;">A copy of the Certificate holder's<br />"public" cryptographic key</span></p>			</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-icon fl-node-59938788340bf" data-node="59938788340bf">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fa fa-pencil"></i>
+			</span>
+
+		<div id="fl-icon-text-59938788340bf" class="fl-icon-text">
+				<p style="text-align: center;"><span style="color: #000000;">The digital signature of the Certificate-<br />issuing authoriy</span></p>			</div>
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5993e0eaa2dc2 fl-visible-mobile" data-node="5993e0eaa2dc2">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5993e0eaa34ed" data-node="5993e0eaa34ed">
+			<div class="fl-col fl-node-5993e0eaa3525 fl-col-has-cols" data-node="5993e0eaa3525">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-5993e0eaa355c" data-node="5993e0eaa355c">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h1 class="editor_big_thin" style="text-align: center;"><span class="editor_light_blue">Ho</span>â€‹<span class="editor_light_blue">w </span>â€‹<span class="editor_light_blue">does my customer know my site is secure?</span></h1>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5993e0eaa3592" data-node="5993e0eaa3592">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p class="editor_big_thin" style="text-align: center;"><span style="font-size: 20px;">Once a visitor is on an SSL-protected page, the followingÂ â€‹visual indicators appear to let them know your site is secure.</span></p>
+</div>
+	</div>
+</div>
+
+<div class="fl-col-group fl-node-5993e0eaa35fe fl-col-group-nested" data-node="5993e0eaa35fe">
+			<div class="fl-col fl-node-5993e0eaa3634 fl-col-small" data-node="5993e0eaa3634">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-5993e0eaa366a" data-node="5993e0eaa366a">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-web"></i>
+			</span>
+
+		<div id="fl-icon-text-5993e0eaa366a" class="fl-icon-text">
+				<p style="text-align: center;"><span style="color: #000000;">HTTPS prefix in the URL<br />(vs. non-secure HTTP)</span></p>			</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-icon fl-node-5993e0eaa36a0" data-node="5993e0eaa36a0">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fa fa-lock"></i>
+			</span>
+
+		<div id="fl-icon-text-5993e0eaa36a0" class="fl-icon-text">
+				<p style="text-align: center;"><span class="editor_medium_gray2">Padlock icon in the<br />â€‹browser's status bar</span></p>			</div>
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-5993e0eaa36d6 fl-col-small" data-node="5993e0eaa36d6">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-5993e0eaa370c" data-node="5993e0eaa370c">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-key"></i>
+			</span>
+
+		<div id="fl-icon-text-5993e0eaa370c" class="fl-icon-text">
+				<div id="wsb-element-00000000-0000-0000-0000-000441614857" class="wsb-element-text" style="text-align: center;" data-type="element"><span style="text-align: center;">URL address bar turns green<br /></span><span style="text-align: center;">(Premium EV SSL only)</span></div>			</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-icon fl-node-5993e0eaa3743" data-node="5993e0eaa3743">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-sheriff-badge"></i>
+			</span>
+
+		<div id="fl-icon-text-5993e0eaa3743" class="fl-icon-text">
+				<p style="text-align: center;"><span class="editor_medium_gray2" style="color: #000000;">Trusted "Verified andÂ Secure" <br />site seal</span></p>			</div>
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-59938832acbf0 fl-visible-desktop-medium" data-node="59938832acbf0">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-59938832b53f5" data-node="59938832b53f5">
+			<div class="fl-col fl-node-59938832b5623 fl-col-has-cols" data-node="59938832b5623">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-59938829a62d5" data-node="59938829a62d5">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h1 class="editor_big_thin" style="text-align: center;"><span class="editor_light_blue">Ho</span>â€‹<span class="editor_light_blue">w </span>â€‹<span class="editor_light_blue">does my customer know my site is secure?</span></h1>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5993883e74eab" data-node="5993883e74eab">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p style="text-align: center;"><span style="font-size: 18px;">Once a visitor is on an SSL-protected page, the followingÂ â€‹visual indicators appear to let them know your site is secure.</span></p>
+</div>
+	</div>
+</div>
+
+<div class="fl-col-group fl-node-599389a187615 fl-col-group-nested" data-node="599389a187615">
+			<div class="fl-col fl-node-599389a18784d fl-col-small" data-node="599389a18784d">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-599389942e804 fl-visible-desktop-medium" data-node="599389942e804">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-web"></i>
+			</span>
+
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-599389a18788a fl-col-small" data-node="599389a18788a">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-599389972d37f fl-visible-desktop-medium" data-node="599389972d37f">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fa fa-lock"></i>
+			</span>
+
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-599389a1878c2 fl-col-small" data-node="599389a1878c2">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-599389983c4f6 fl-visible-desktop-medium" data-node="599389983c4f6">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-checkbox"></i>
+			</span>
+
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-599389a1878fb fl-col-small" data-node="599389a1878fb">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-icon fl-node-59938999bc598 fl-visible-desktop-medium" data-node="59938999bc598">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+				<i class="fi-sheriff-badge"></i>
+			</span>
+
+	</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-599389f868d40 fl-col-group-nested" data-node="599389f868d40">
+			<div class="fl-col fl-node-599389f86914f fl-col-small" data-node="599389f86914f">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599389ecc33bb" data-node="599389ecc33bb">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h4 style="text-align: center;"><span style="color: #000000;">HTTPS prefix in the URL</span><br />
+<span style="color: #000000;">(vs. non-secure HTTP)</span></h4>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-599389f869193 fl-col-small" data-node="599389f869193">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599389edebfa4" data-node="599389edebfa4">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h4 style="text-align: center;"><span class="editor_medium_gray2" style="color: #000000;">Padlock icon in the<br />
+â€‹browser's status bar</span></h4>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-599389f8691d3 fl-col-small" data-node="599389f8691d3">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599389ef6631b" data-node="599389ef6631b">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h4 style="text-align: center;"><span style="color: #000000;">URL address bar turns green</span><br />
+<span style="color: #000000;">(Premium EV SSL only)</span></h4>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-599389f869215 fl-col-small" data-node="599389f869215">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599389f16d72b" data-node="599389f16d72b">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h4 style="text-align: center;"><span class="editor_medium_gray2" style="color: #000000;">Trusted "Verified and<br />
+Secure" site seal</span></h4>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-59938bb8afae7" data-node="59938bb8afae7">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-59938bb8ba8f6" data-node="59938bb8ba8f6">
+			<div class="fl-col fl-node-59938bb8baafb" data-node="59938bb8baafb">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-59938bc4f2620" data-node="59938bc4f2620">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<div id="wsb-element-00000000-0000-0000-0000-000441619713" class="wsb-element-text" data-type="element">
+<h3 class="editor_price" style="text-align: center;"><span style="color: #ffffff;">Ready to secure your transactions and customer data?</span></h3>
+</div>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-button fl-node-59938c35c8908" data-node="59938c35c8908">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-button-wrap fl-button-width-auto fl-button-center">
+			<a href="#singledomain" target="_self" class="fl-button" role="button">
+							<span class="fl-button-text">Select your ssl certificate now.</span>
+					</a>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-599394d23ebff" data-node="599394d23ebff">
+	<div class="fl-row-content-wrap">
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-599394d23ee61" data-node="599394d23ee61">
+			<div class="fl-col fl-node-599394d23ee9f" data-node="599394d23ee9f">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-rich-text fl-node-599395932660d" data-node="599395932660d">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p style="text-align: center;"><span style="font-size: 22px;">NEED HELP? <span class="editor_light_weight">Call our award-winning support team 24/7 at (480) 624-2500</span></span></p>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</div>	</div><!-- .fl-post-content -->
+	
+</article>
+
+<!-- .fl-post -->
+					</div>
+	</div>
+</div>
+
+
+	</div><!-- .fl-page-content -->
+		<footer class="fl-page-footer-wrap" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div class="fl-page-footer">
+	<div class="fl-page-footer-container container">
+		<div class="fl-page-footer-row row">
+			<div class="col-md-12 text-center clearfix"><ul id="menu-footer-menu" class="fl-page-footer-nav nav navbar-nav menu"><li id="menu-item-167" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-167"><a href="http://starfieldtech.com">Our Products</a></li>
+<li id="menu-item-189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189"><a href="https://starfieldtech.com/our-company/">Our Company</a></li>
+<li id="menu-item-64" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-64"><a href="https://www.secureserver.net/agreements/showdoc.aspx?pageid=PRIVACY&#038;prog_id=504762&#038;pl_id=504762&#038;isc=56797288.1">Privacy Policy</a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-63"><a href="https://www.secureserver.net/legal-agreements.aspx?isc=56797288.1&#038;ci=1911&#038;prog_id=504762">Legal Agreements</a></li>
+<li id="menu-item-65" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-65"><a href="https://certs.secureserver.net/repository">Repository</a></li>
+<li id="menu-item-82" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-82"><a href="https://sso.secureserver.net/?app=mya&#038;path=%2fDefault.aspx%3fprog_id%3d504762&#038;plid=504762&#038;prog_id=504762"><a href="https://sso.secureserver.net/?app=mya&#038;path=%2fDefault.aspx%3fprog_id%3d504762&#038;plid=504762&#038;prog_id=504762">My Account</a></li>
+<li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-81"><a href="https://cart.secureserver.net/EmptyCart.aspx?prog_id=504762&#038;isc=56797288.1">Â Â  <a href="https://cart.secureserver.net/?prog_id=504762">Cart <span class="widget rstore-cart hide-empty" style="display:none;">(<span class="rstore-cart-count">0</span>)</span> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></a></li>
+</ul></div>					</div>
+	</div>
+</div><!-- .fl-page-footer -->	</footer>
+		</div><!-- .fl-page -->
+<script type="text/javascript">
+
+if(typeof jQuery == 'undefined' || typeof jQuery.fn.on == 'undefined') {
+	document.write('<script src="https://starfieldtech.com/wp-content/plugins/bb-plugin/js/jquery.js"><\/script>');
+	document.write('<script src="https://starfieldtech.com/wp-content/plugins/bb-plugin/js/jquery.migrate.min.js"><\/script>');
+}
+
+</script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-content/uploads/bb-plugin/cache/282-layout.js?ver=71dcf6a5a09ef2a9cd793d04179da59a'></script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-content/plugins/reseller-store/assets/js/js-cookie.min.js?ver=2.1.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rstore = {"pl_id":"504762","urls":{"cart":"https:\/\/cart.secureserver.net\/?pl_id=504762","cart_api":"https:\/\/storefront.api.secureserver.net\/api\/v1\/cart\/504762\/?pl_id=504762","gui":"https:\/\/gui.secureserver.net\/pcjson\/standardheaderfooter"},"cookies":{"shopperId":"ShopperId504762"},"product":{"id":""},"i18n":{"add_to_cart":"Add to cart","view_cart":"View cart","error":"An error has occurred"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-content/plugins/reseller-store/assets/js/store.min.js?ver=0.2.0'></script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-content/plugins/reseller-store/assets/js/domain-search.min.js?ver=0.2.0'></script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-content/themes/bb-theme/js/jquery.throttle.min.js?ver=1.6.1'></script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-content/plugins/bb-plugin/js/jquery.imagesloaded.js?ver=1.10.7.1'></script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-content/plugins/bb-plugin/js/jquery.magnificpopup.min.js?ver=1.10.7.1'></script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-content/themes/bb-theme/js/bootstrap.min.js?ver=1.6.1'></script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-content/themes/bb-theme/js/theme.min.js?ver=1.6.1'></script>
+<script type='text/javascript' src='https://starfieldtech.com/wp-includes/js/wp-embed.min.js?ver=4.8.3'></script>
+<br><center>Copyright Â© 2013 - 2017 Starfield Technologies, LLC.  All Rights Reserved.</center>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿{
+  "testcases": [
+    {
+      "name": "HP Daas",
+      "type": "http",
+      "target": "https://www.hpdaas.com",
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Look at redirect location",
+      "type": "http",
+      "target": "http://o.ss2.us/",
+      "redirect_location": "http://www.starfieldtech.com/",
+      "expected_response_code": 301,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Network redirect",
+      "type": "http",
+      "target": "http://o.ss2.us/",
+      "follow_redirect": true,
+      "expected_response_code": 200,
+      "notes": "Optional field."
+    }
+  ]
+}
