@@ -1,30 +1,22 @@
-#DaasAssessmentTool
-  This is Readiness tool to assess system environment for installing Daas, TPM , TA client etc.	
-  It is used to, - Verify network connectivity using C# native Http classes
-                 - Generate TM client log zip at C:/ path
- 
-#Configuration file  
- Purpose : config_file.json is to create different test suits for different environment like Daas, TPM, TA client etc.
-           It contains following fields,
-              name - name of the test suit
-              purpose - purpose to test
-              path - path of the json file from which the test case data will be taken at runtime
-              type - type of test case. It has two different types
-		                 a. http - check network connectivity
-                        e.g. {
-	                        "name": "DAAS",
-                          "purpose": "Connecting DAAS end points :",
-                          "path": "InputJsonFiles\\https_tests_daas.json",      
-                     		  "type": "http"
-                         }
-                      b. command - execute commands through Cmd 
-                        e.g. {
-                          "name": "TM client Log",
-                          "purpose": "Generating TM client Log",
-                          "path": "InputJsonFiles\\command_tests_cases.json",      
-                          "type": "command"
-                        }
-Please note: Field engineer can add/edit test suit in config_file.json with existing format.
+#DaasAssessmentTool 
+This is Readiness tool to assess system environment for installing Daas, TPM , TA client etc. 
+It is used to, 1. Verify network connectivity using C# native Http classes 
+               2. Generate TM client log zip at C:/ path
+
+#Configuration file
+Purpose : config_file.json is to create different test suits for different environment like Daas, TPM, TA client etc. 
+It contains following fields, 
+	name - name of the test suit 
+	purpose - purpose to test 
+	path - path of the json file from which the test case data will be taken at runtime 
+	type - type of test case. It has two different types 
+		a. http - check network connectivity 
+		e.g. { "name": "DAAS", "purpose": "Connecting DAAS end points :", "path": "InputJsonFiles\https_tests_daas.json",
+		       "type": "http" } 
+		b. command - execute commands through Cmd 
+		e.g. { "name": "TM client Log", "purpose": "Generating TM client Log", "path": "InputJsonFiles\command_tests_cases.json",
+                       "type": "command" } 
+		Please note: Field engineer can add/edit test suit in config_file.json with existing format.
  
 #Input JSON file 
  Purpose : Input json files contains array of test cases require to assess a particular environment.
