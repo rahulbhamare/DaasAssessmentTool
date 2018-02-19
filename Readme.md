@@ -30,32 +30,31 @@ It contains following fields,
 ## Input JSON file 
 
  Purpose : Input json files contains array of test cases require to assess a particular environment.
-           It has following common fields,
-	   
-             name - name of the test case
-             type - type of test case
-             target - url to check network connectivity
-             expected_response_code - field engineer should provide expected response code here.Once HttpWebRequest has been sent 
-	     			      then this expected response code should match with Actual response code. Otherwise, the result
-				      will be false.
+           It has following common fields,	   
+            name - name of the test case
+            type - type of test case
+            target - url to check network connectivity
+            expected_response_code - field engineer should provide expected response code here.Once HttpWebRequest
+	                             has been sent then this expected response code should match with Actual response
+				     code. Otherwise, the result will be false.
            
 	   For https_tests_proxy.json input file having some additional fields like,
-              proxyserver - proxy server url
-              username, password - to check authenticated proxies
+            proxyserver - proxy server url
+            username, password - to check authenticated proxies
 	
-                e.g. "testcases": [
-	                     {
-		                  "name": "HP Daas",
-		                   "type": "http",
-		                   "target": "http://jenkins-server.lightaria.com:8080/login",      
-		                   "port": 8080,
-		                   "proxyserver":"web-proxy.in.hpicorp.net:8080",
-		                   "username": "uname",
-		                   "password": "pwd",
-		                   "expected_response_code": 200,
-		                   "notes": "Optional field."
-		                  }
-		              ]
+              e.g. "testcases": [
+	                  {
+	                 "name": "HP Daas",
+	                 "type": "http",
+	                 "target": "http://jenkins-server.lightaria.com:8080/login",      
+	                 "port": 8080,
+	                 "proxyserver":"web-proxy.in.hpicorp.net:8080",
+	                 "username": "uname",
+	                 "password": "pwd",
+	                 "expected_response_code": 200,
+	                 "notes": "Optional field."
+	                 }
+	              ]
 
 ## How to Add/Edit url to check network connectivity?
 
