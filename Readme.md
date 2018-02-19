@@ -19,12 +19,21 @@ It contains following fields,
 	
 	   a. http - check network connectivity 
 		
-	      e.g. { "name": "DAAS", "purpose": "Connecting DAAS end points :", "path": 
-	      "InputJsonFiles\https_tests_daas.json", "type": "http" } 
+	      e.g. { 
+	      		"name": "DAAS", 
+			"purpose": "Connecting DAAS end points :", 
+			"path": "InputJsonFiles\https_tests_daas.json", 
+			"type": "http" 
+		   } 
+		   
 	   b. command - execute commands through Cmd 
 		
-	      e.g. { "name": "TM client Log", "purpose": "Generating TM client Log", "path": 
-	      "InputJsonFiles\command_tests_cases.json", "type": "command" } 
+	      e.g. {
+	      		"name": "TM client Log", 
+			"purpose": "Generating TM client Log", 
+			"path": "InputJsonFiles\command_tests_cases.json", 
+			"type": "command" 
+		   } 
 		       
         Please note: Field engineer can add/edit test suit in config_file.json with existing format.
  
