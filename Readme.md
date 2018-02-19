@@ -3,8 +3,8 @@
 This is Readiness tool to assess system environment for installing Daas, TPM , TA client etc.
 It is used to, 
 
-	       1. Verify network connectivity using C# native Http classes
-               2. Generate TM client log zip at C:/ path
+	       - Verify network connectivity using C# native Http classes
+	       - Generate TM client log zip at C:/ path
 
 ## Configuration file
 
@@ -16,13 +16,13 @@ It contains following fields,
 	path - path of the json file from which the test case data will be taken at runtime 
 	type - type of test case. It has two different types 
 	
-		a. http - check network connectivity 
+	   a. http - check network connectivity 
 		
-		e.g. { "name": "DAAS", "purpose": "Connecting DAAS end points :", "path": "InputJsonFiles\https_tests_daas.json",
-		       "type": "http" } 
-		b. command - execute commands through Cmd 
+	      e.g. { "name": "DAAS", "purpose": "Connecting DAAS end points :", "path": "InputJsonFiles\https_tests_daas.json",
+		     "type": "http" } 
+	   b. command - execute commands through Cmd 
 		
-		e.g. { "name": "TM client Log", "purpose": "Generating TM client Log", "path": "InputJsonFiles\command_tests_cases.json",
+	      e.g. { "name": "TM client Log", "purpose": "Generating TM client Log", "path": "InputJsonFiles\command_tests_cases.json",
                        "type": "command" } 
 		       
 		Please note: Field engineer can add/edit test suit in config_file.json with existing format.
@@ -43,19 +43,19 @@ It contains following fields,
               proxyserver - proxy server url
               username, password - to check authenticated proxies
 	
-                  e.g. "testcases": [
-	                       {
-		                     "name": "HP Daas",
-		                     "type": "http",
-		                     "target": "http://jenkins-server.lightaria.com:8080/login",      
-		                     "port": 8080,
-		                     "proxyserver":"web-proxy.in.hpicorp.net:8080",
-		                     "username": "uname",
-		                     "password": "pwd",
-		                     "expected_response_code": 200,
-		                     "notes": "Optional field."
-		                    }
-		                ]
+                e.g. "testcases": [
+	                     {
+		                  "name": "HP Daas",
+		                   "type": "http",
+		                   "target": "http://jenkins-server.lightaria.com:8080/login",      
+		                   "port": 8080,
+		                   "proxyserver":"web-proxy.in.hpicorp.net:8080",
+		                   "username": "uname",
+		                   "password": "pwd",
+		                   "expected_response_code": 200,
+		                   "notes": "Optional field."
+		                  }
+		              ]
 
 ## How to Add/Edit url to check network connectivity?
 
