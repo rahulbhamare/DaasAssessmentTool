@@ -1,11 +1,12 @@
 #DaasAssessmentTool 
 This is Readiness tool to assess system environment for installing Daas, TPM , TA client etc.
 
-
-It is used to, 1. Verify network connectivity using C# native Http classes
+It is used to, 
+	       1. Verify network connectivity using C# native Http classes
                2. Generate TM client log zip at C:/ path
 
 #Configuration file
+
 Purpose : config_file.json is to create different test suits for different environment like Daas, TPM, TA client etc. 
 It contains following fields, 
 	name - name of the test suit 
@@ -21,6 +22,7 @@ It contains following fields,
 		Please note: Field engineer can add/edit test suit in config_file.json with existing format.
  
 #Input JSON file 
+
  Purpose : Input json files contains array of test cases require to assess a particular environment.
            It has following common fields,
               name - name of the test case
