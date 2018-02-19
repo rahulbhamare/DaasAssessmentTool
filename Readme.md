@@ -1,6 +1,5 @@
-#DaasAssessmentTool 
+#DaasAssessmentTool
 This is Readiness tool to assess system environment for installing Daas, TPM , TA client etc.
-
 It is used to, 
 	       1. Verify network connectivity using C# native Http classes
                2. Generate TM client log zip at C:/ path
