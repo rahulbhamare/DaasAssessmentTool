@@ -18,28 +18,28 @@ It contains following fields,
 	
 	   a. http - check network connectivity 
 		
-	      e.g. { "name": "DAAS", "purpose": "Connecting DAAS end points :", "path": "InputJsonFiles\https_tests_daas.json",
-		     "type": "http" } 
+	      e.g. { "name": "DAAS", "purpose": "Connecting DAAS end points :", "path": 
+	      "InputJsonFiles\https_tests_daas.json", "type": "http" } 
 	   b. command - execute commands through Cmd 
 		
-	      e.g. { "name": "TM client Log", "purpose": "Generating TM client Log", "path": "InputJsonFiles\command_tests_cases.json",
-                       "type": "command" } 
+	      e.g. { "name": "TM client Log", "purpose": "Generating TM client Log", "path": 
+	      "InputJsonFiles\command_tests_cases.json", "type": "command" } 
 		       
-		Please note: Field engineer can add/edit test suit in config_file.json with existing format.
+        Please note: Field engineer can add/edit test suit in config_file.json with existing format.
  
 ## Input JSON file 
 
  Purpose : Input json files contains array of test cases require to assess a particular environment.
            It has following common fields,
 	   
-              name - name of the test case
-              type - type of test case
-              target - url to check network connectivity
-              expected_response_code - field engineer should provide expected response code here.Once HttpWebRequest has been sent then                                        this expected response code should match with Actual response code. Otherwise, the result will be                                        false.
-              
-	      notes - it is optional for additional paramaeters like request headers etc.
- 
-           For https_tests_proxy.json input file having some additional fields like,
+             name - name of the test case
+             type - type of test case
+             target - url to check network connectivity
+             expected_response_code - field engineer should provide expected response code here.Once HttpWebRequest has been sent 
+	     			      then this expected response code should match with Actual response code. Otherwise, the result
+				      will be false.
+           
+	   For https_tests_proxy.json input file having some additional fields like,
               proxyserver - proxy server url
               username, password - to check authenticated proxies
 	
