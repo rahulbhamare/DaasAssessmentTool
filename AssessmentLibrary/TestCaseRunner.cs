@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 
 namespace AssessmentLibrary
 {
@@ -289,16 +289,15 @@ namespace AssessmentLibrary
                 System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
                 startInfo.UseShellExecute = true;
                 startInfo.CreateNoWindow = true;
+                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 startInfo.WorkingDirectory = ".";
-                Console.WriteLine("File path :" + filePath);
-                Console.WriteLine("Working directory :" + startInfo.WorkingDirectory);
                 startInfo.FileName = filePath;
                 startInfo.Verb = "runas";                
                 startInfo.Arguments = parameters;
                 startInfo.ErrorDialog = true;
-
+                Console.WriteLine("HPREPORT Zip has been downloaded at C:\\");
                 Process process = System.Diagnostics.Process.Start(startInfo);
-                process.WaitForExit();
+                process.WaitForExit();                
                 return process.ExitCode;
             }
             catch (Win32Exception ex)
