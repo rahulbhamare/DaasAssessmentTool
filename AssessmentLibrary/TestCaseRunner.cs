@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.ServiceProcess;
 using System.Text;
 //using System.Threading.Tasks;
 
@@ -161,10 +163,30 @@ namespace AssessmentLibrary
                 //TODO: redirect output?
                 Console.WriteLine("Command test case");
                 CommandTestCase commandTestCase = testCase as CommandTestCase;
-                int status = RunProcessAsAdmin(commandTestCase.TestCommand, commandTestCase.Params);
+                int status = 0;
+
+                switch (commandTestCase.Purpose)
+                {
+                    case "Install":
+                        status = RunProcessAsAdmin(commandTestCase.TestCommand, commandTestCase.Params);
+                        combinedOutput = string.Format("\t {0} has been installed ", commandTestCase.TestName);
+                        break;
+                    case "Service":
+                        status = GetServiceStatus(commandTestCase.TestCommand);
+                        combinedOutput = string.Format("\t {0} running ", commandTestCase.TestName);
+                        break;
+                    case "Registry":
+                        status = GetRegistryStatus(commandTestCase.TestCommand);
+                        combinedOutput = string.Format("\t {0} exists ", commandTestCase.TestName);
+                        break;
+                    default:break;
+                }
+                                 
                 commandTestCase.ActualReturnCode = status;
                 // TODO: do not assume that it actually finished
-                commandTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;                
+                commandTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
+                OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput,
+                       commandTestCase.DidTestCasePass()));
             }
             else if (testCase is HTTPTestCase)
             {
@@ -173,7 +195,7 @@ namespace AssessmentLibrary
                 try
                 {  
                     webresponse = (HttpWebResponse)SendWebRequest(httpTestCase, "GET", collHeader).GetResponse();
-                    
+                    int temp = (int)webresponse.StatusCode;
                     //Check if there is any redirected URI
                     if (!string.IsNullOrEmpty(httpTestCase.RedirectLocation))
                     {
@@ -204,7 +226,7 @@ namespace AssessmentLibrary
                         }
                         catch (WebException ex)
                         {
-                            webresponse = (HttpWebResponse)e.Response;
+                            webresponse = (HttpWebResponse)ex.Response;
                             Console.WriteLine("Default proxy block :"+ ex.Message);
                         }
                     }
@@ -240,8 +262,46 @@ namespace AssessmentLibrary
                     
                     SetResponseCode(httpTestCase);                                        
                 }
-            }            
+            } 
+            //else if (testCase is ServiceTestCase)
+            //{
+            //    //TODO: redirect output?
+            //    Console.WriteLine("Service test case");
+            //    ServiceTestCase serviceTestCase = testCase as ServiceTestCase;
+            //    serviceTestCase.ActualResponseCode = GetServiceStatus(serviceTestCase.ServiceName);
+            //    // TODO: do not assume that it actually finished
+            //    serviceTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
+            //}
             return true;
+        }
+
+        private int GetRegistryStatus(string testCommand)
+        {
+            if (Registry.GetValue(testCommand, "SCCM client", null) == null)
+            {
+                return -1; // No registry exits
+            }
+            else
+            {
+                return 0; // registry exits
+            }
+        }
+
+        //Get service status
+        //Expected status result is Running(4)
+        private int GetServiceStatus(string serviceName)
+        {
+            int status = 0;
+            try
+            {
+                using (ServiceController sc = new ServiceController(serviceName))
+                {                    
+                    status = (int)sc.Status;                    
+                    return status;
+                }
+            }
+            catch (ArgumentException) { return status; }
+            catch (Win32Exception) { return status; }
         }
 
         private HttpWebRequest SendWebRequest(HTTPTestCase httpTestCase, string RequestMethod, NameValueCollection collHeader)
@@ -270,7 +330,7 @@ namespace AssessmentLibrary
 
             //////// TEST TEST
             //////// TODO: how to pull out http code
-            OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(HttpTestCase.Target,
+            OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs("\t Connection result to "+ HttpTestCase.Target,
                 HttpTestCase.DidTestCasePass()));
             Console.WriteLine("----------------------------------------------------------------------");
         }

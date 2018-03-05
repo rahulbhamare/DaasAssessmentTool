@@ -1,0 +1,88 @@
+{
+  "testcases": [
+    {
+      "name": "DAAS",
+      "type": "http",
+      "target": "http://hpdaas.com/",
+      "expected_response_code": 301,
+      "notes": "Optional field."
+    },
+    {
+      "name": "GoDaddy",
+      "type": "http",
+      "target": "http://godaddy.com/",
+      "expected_response_code": 301,
+      "notes": "Optional field."
+    },
+    {
+      "name": "AirWatch",
+      "type": "http",
+      "target": "http://discovery.airwatchmdm.com/",
+      "expected_response_code": 302,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Live",
+      "type": "http",
+      "target": "http://live.com/",
+      "expected_response_code": 301,
+      "notes": "Optional field."
+    },
+    {
+      "name": "Windows",
+      "type": "http",
+      "target": "http://windows.net/",
+      "expected_response_code": 302,
+      "notes": "Optional field"
+    },
+    {
+      "name": "Microsoft Online",
+      "type": "http",
+      "target": "http://login.microsoftonline.com/",
+      "expected_response_code": 302,
+      "notes": ""
+    },
+    {
+      "name": "Microsoft",
+      "type": "http",
+      "target": "http://microsoft.com/",
+      "expected_response_code": 301,
+      "notes": ""
+    },
+    {
+      "name": "Windows",
+      "type": "http",
+      "target": "http://windows.com/",
+      "expected_response_code": 301,
+      "notes": ""
+    },
+    {
+      "name": "Live",
+      "type": "http",
+      "target": "http://login.live.net/",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Digi Cert",
+      "type": "http",
+      "target": "http://digicert.com/",
+      "expected_response_code": 301,
+      "notes": ""
+    },
+    {
+      "name": "Public Trust",
+      "type": "http",
+      "target": "http://www.public-trust.com/",
+      "expected_response_code": 200,
+      "notes": ""
+    },
+    {
+      "name": "Omni Root",
+      "type": "http",
+      "target": "http://www.omniroot.com/",
+      "expected_response_code": 302,
+      "notes": ""
+    }
+  ]
+}

@@ -1,5 +1,17 @@
 {
-  "configfiles": [
+  "configfiles": [        
+    {
+      "name": "Command test cases",
+      "purpose": "Command execution",
+      "path": "InputJsonFiles\\command_tests_cases.json",      
+      "type": "command"
+    },
+    {
+      "name": "AirWatch",
+      "purpose": "Connecting AirWatch end points :",
+      "path": "InputJsonFiles\\https_tests_airwatch.json",      
+      "type": "http"
+    },
     {
       "name": "DAAS",
       "purpose": "Connecting DAAS end points :",
@@ -17,12 +29,6 @@
       "purpose": "Connecting end points through Proxies :",
       "path": "InputJsonFiles\\https_tests_proxy.json",
       "type": "http"
-    },
-    {
-      "name": "TM client Log",
-      "purpose": "Generating TM client Log",
-      "path": "InputJsonFiles\\command_tests_cases.json",      
-      "type": "command"
     }
   ]
 }

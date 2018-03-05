@@ -1,11 +1,36 @@
 {
   "testcases": [
     {
-      "name": "HPLogReportTool",
+      "name": "Install HPLog Report",
+      "purpose": "Install",
       "type": "command",
       "command": "HPLogReportTool\\HPLogReportTool.exe",
       "expected_response_code": 0,
       "params" : ""
+    },
+    {
+      "name": "Windows service",
+      "purpose": "Service",
+      "type": "command",
+      "command": "dmwappushservice",
+      "expected_response_code": 4,
+      "params": "Optional field."
+    },
+    {
+      "name": "SCCM client registry",
+      "purpose": "Registry",
+      "type": "command",
+      "command": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\SMS\\Mobile Client",
+      "expected_response_code": 1,
+      "params": "Optional field."
+    },
+    {
+      "name": "SCCM client registry",
+      "purpose": "Registry",
+      "type": "command",
+      "command": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\SMS\\Mobile Client",
+      "expected_response_code": 1,
+      "params": "Optional field."
     }
   ]
 }

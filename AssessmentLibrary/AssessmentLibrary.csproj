@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +56,7 @@
     <Compile Include="HTTPTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProxySupport.cs" />
+    <Compile Include="ServiceTestCase.cs" />
     <Compile Include="TestCaseCategory.cs" />
     <Compile Include="TestCaseOutputEventArgs.cs" />
     <Compile Include="TestCaseRunner.cs" />

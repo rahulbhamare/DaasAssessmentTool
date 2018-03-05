@@ -40,7 +40,7 @@ namespace AssessmentLibrary
         {
             if(TestCaseOutputType == OutputType.TestResult)
             {
-                return string.Format("\t Connection result to {0}: {1}", TargetUrl, TestCasePass);
+                return string.Format("{0} : {1}",TargetUrl, TestCasePass);
             }
             else
             {

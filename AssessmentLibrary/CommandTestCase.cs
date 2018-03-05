@@ -33,6 +33,13 @@ namespace AssessmentLibrary
             private set;
         }
 
+        [JsonProperty("purpose")]
+        public string Purpose
+        {
+            get;
+            private set;
+        }
+
         public int ActualReturnCode
         {
             get;
