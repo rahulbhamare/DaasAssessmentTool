@@ -1,8 +1,16 @@
 {
   "testcases": [
     {
+      "name": "Installshield Installer logs",
+      "purpose": "InstallExe",
+      "type": "command",
+      "command": "C:\\Setup.exe",
+      "expected_response_code": 0,
+      "params" : "\/debuglog\"C:\\setupexe.log\""
+    },
+    {
       "name": "Install HPLog Report",
-      "purpose": "Install",
+      "purpose": "InstallExe",
       "type": "command",
       "command": "HPLogReportTool\\HPLogReportTool.exe",
       "expected_response_code": 0,
@@ -10,7 +18,7 @@
     },
     {
       "name": "Windows service",
-      "purpose": "Service",
+      "purpose": "ServiceStatus",
       "type": "command",
       "command": "dmwappushservice",
       "expected_response_code": 4,
@@ -18,7 +26,7 @@
     },
     {
       "name": "SCCM client registry",
-      "purpose": "Registry",
+      "purpose": "RegistryStatus",
       "type": "command",
       "command": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\SMS\\Mobile Client",
       "expected_response_code": 1,

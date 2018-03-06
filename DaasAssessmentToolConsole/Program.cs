@@ -52,23 +52,31 @@ namespace DaasAssessmentToolConsole
         {   
             List<ConfigFile> lstConfigFiles = BaseTestCase.LoadConfigFile(configFileName);
             string _testcasetype = string.Empty;
+
             foreach (var item in lstConfigFiles)
             {
-                _testcasetype = item.TestCaseType;
-                string testResultString = string.Format(item.Purpose + "\r\n\r\n");
-                Console.WriteLine(testResultString);
+                try
+                {
+                    _testcasetype = item.TestCaseType;
+                    string testResultString = string.Format(item.Purpose + "\r\n\r\n");
+                    Console.WriteLine(testResultString);
 
-                // make configurable?
-                //Replace curl with C# default httpWebRequest API
-                testCaseRunner = new TestCaseRunner(item.FilePath);
-                //testCaseRunner.PathToCurl = "curl.exe";
-                testCaseRunner.TestCaseOutputEventHandler += TestCaseRunner_TestCaseOutputEventHandler;
-                //TODO: hook up string streaming
-                testCaseRunner.RunTestCases();
-                testResultString = string.Format(item.TestName + " test case status : {0} \r\n\r\n", testCaseRunner.DidAllTestCasesPass());
-                
-                Console.WriteLine(testResultString);
-            }         
+                    // make configurable?
+                    //Replace curl with C# default httpWebRequest API
+                    testCaseRunner = new TestCaseRunner(item.FilePath);
+                    //testCaseRunner.PathToCurl = "curl.exe";
+                    testCaseRunner.TestCaseOutputEventHandler += TestCaseRunner_TestCaseOutputEventHandler;
+                    //TODO: hook up string streaming
+                    testCaseRunner.RunTestCases();
+                    testResultString = string.Format(item.TestName + " test case status : {0} \r\n\r\n", testCaseRunner.DidAllTestCasesPass());
+
+                    Console.WriteLine(testResultString);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(string.Format("\t" + ex.Message + "\r\n\r\n"));
+                }
+            }     
         }
         private static void TestCaseRunner_TestCaseOutputEventHandler(object sender, TestCaseOutputEventArgs e)
         {

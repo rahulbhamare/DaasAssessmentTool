@@ -161,32 +161,35 @@ namespace AssessmentLibrary
             if (testCase is CommandTestCase)
             {
                 //TODO: redirect output?
-                Console.WriteLine("Command test case");
+                //Console.WriteLine("Command test case");
                 CommandTestCase commandTestCase = testCase as CommandTestCase;
                 int status = 0;
 
                 switch (commandTestCase.Purpose)
                 {
-                    case "Install":
+                    case "InstallExe":
                         status = RunProcessAsAdmin(commandTestCase.TestCommand, commandTestCase.Params);
-                        combinedOutput = string.Format("\t {0} has been installed ", commandTestCase.TestName);
+                        combinedOutput = string.Format("\t {0} has been executed ", commandTestCase.TestName);
                         break;
-                    case "Service":
+                    case "ServiceStatus":
                         status = GetServiceStatus(commandTestCase.TestCommand);
                         combinedOutput = string.Format("\t {0} running ", commandTestCase.TestName);
                         break;
-                    case "Registry":
+                    case "RegistryStatus":
                         status = GetRegistryStatus(commandTestCase.TestCommand);
                         combinedOutput = string.Format("\t {0} exists ", commandTestCase.TestName);
-                        break;
+                        break;                   
                     default:break;
                 }
                                  
                 commandTestCase.ActualReturnCode = status;
                 // TODO: do not assume that it actually finished
-                commandTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
-                OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput,
-                       commandTestCase.DidTestCasePass()));
+                
+                SetResponseCode(commandTestCase, commandTestCase.ActualReturnCode, commandTestCase.TestCommand);
+
+                //commandTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
+                //OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput,
+                //       commandTestCase.DidTestCasePass()));
             }
             else if (testCase is HTTPTestCase)
             {
@@ -258,26 +261,16 @@ namespace AssessmentLibrary
                         resposeCode = (int)webresponse.StatusCode;
                         httpTestCase.ActualResponseCode = resposeCode;
                         webresponse.Close();
-                    }
-                    
-                    SetResponseCode(httpTestCase);                                        
+                    }                    
+                    SetResponseCode(httpTestCase, httpTestCase.ActualResponseCode, httpTestCase.Target);                                        
                 }
-            } 
-            //else if (testCase is ServiceTestCase)
-            //{
-            //    //TODO: redirect output?
-            //    Console.WriteLine("Service test case");
-            //    ServiceTestCase serviceTestCase = testCase as ServiceTestCase;
-            //    serviceTestCase.ActualResponseCode = GetServiceStatus(serviceTestCase.ServiceName);
-            //    // TODO: do not assume that it actually finished
-            //    serviceTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
-            //}
+            }             
             return true;
         }
 
         private int GetRegistryStatus(string testCommand)
         {
-            if (Registry.GetValue(testCommand, "SCCM client", null) == null)
+            if(Registry.GetValue(testCommand, "SCCM client", null) == null)
             {
                 return -1; // No registry exits
             }
@@ -315,13 +308,13 @@ namespace AssessmentLibrary
                 && !string.IsNullOrEmpty(httpTestCase.Password)) ? true : false;
             return webrequest = BaseHttp.CreateWebRequest(isNetworkCred, allowRedirect);//false indicates: Http non-secure request            
         }
-        private void SetResponseCode(HTTPTestCase HttpTestCase)
+        private void SetResponseCode(BaseTestCase HttpTestCase, int ActualResponseCode, string Target)
         {
             // ... Check Status Code                                
             //Console.WriteLine("Response StatusCode: " + HttpTestCase.ActualResponseCode);
             //string combinedOutput = HttpTestCase.Target + "\r\n\r\n" + "HTTPWebRequest arguments:" + HttpTestCase.ActualResponseCode 
             //    + "\r\n\r\n";
-            string combinedOutput = "Response StatusCode: " + HttpTestCase.ActualResponseCode;
+            string combinedOutput = "Response StatusCode: " + ActualResponseCode;
 
             OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput));
             //////// for now, just output
@@ -330,7 +323,7 @@ namespace AssessmentLibrary
 
             //////// TEST TEST
             //////// TODO: how to pull out http code
-            OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs("\t Connection result to "+ HttpTestCase.Target,
+            OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs("\t Connection result to "+ Target,
                 HttpTestCase.DidTestCasePass()));
             Console.WriteLine("----------------------------------------------------------------------");
         }
@@ -340,22 +333,21 @@ namespace AssessmentLibrary
             try
             {
                 // Get the current directory.
-#if DEBUG
-                string filePath = Utils.GetInputFilePath(fileName);
-#else
-                string filePath = fileName;
-#endif
-      
+//#if DEBUG
+//                //string filePath = Utils.GetInputFilePath(fileName);
+//                string filePath = fileName;
+//#else
+//                string filePath = fileName;
+//#endif
+
                 System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                startInfo.UseShellExecute = true;
+                startInfo.UseShellExecute = false;
                 startInfo.CreateNoWindow = true;
                 startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                startInfo.WorkingDirectory = ".";
-                startInfo.FileName = filePath;
+                startInfo.FileName = fileName;
                 startInfo.Verb = "runas";                
                 startInfo.Arguments = parameters;
-                startInfo.ErrorDialog = true;
-                Console.WriteLine("HPREPORT Zip has been downloaded at C:\\");
+                startInfo.ErrorDialog = true;                
                 Process process = System.Diagnostics.Process.Start(startInfo);
                 process.WaitForExit();                
                 return process.ExitCode;
