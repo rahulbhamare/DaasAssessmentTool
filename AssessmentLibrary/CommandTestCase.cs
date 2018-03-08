@@ -26,8 +26,8 @@ namespace AssessmentLibrary
             private set;
         }
 
-        [JsonProperty("expected_return_code")]
-        public int ExpectedReturnCode
+        [JsonProperty("expected_response_code")]
+        public int ExpectedResponseCode
         {
             get;
             private set;
@@ -51,7 +51,7 @@ namespace AssessmentLibrary
         public override bool DidTestCasePass()
         {
             return CaseStatus == TestCaseStatus.FINISHED &&
-                    ExpectedReturnCode == ActualReturnCode;
+                    ExpectedResponseCode == ActualReturnCode;
         }
 
         public override void ClearTestResult()
@@ -59,8 +59,5 @@ namespace AssessmentLibrary
             base.ClearTestResult();
             ActualReturnCode = 0;
         }
-
-
-
     }
 }
