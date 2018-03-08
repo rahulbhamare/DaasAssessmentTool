@@ -176,7 +176,7 @@ namespace AssessmentLibrary
                         combinedOutput = string.Format("\t {0} running ", commandTestCase.TestName);
                         break;
                     case "RegistryStatus":
-                        status = GetRegistryStatus(commandTestCase.TestCommand);
+                        status = CheckRegistryExists(commandTestCase.TestCommand);
                         combinedOutput = string.Format("\t {0} exists ", commandTestCase.TestName);
                         break;                   
                     default:break;
@@ -185,7 +185,7 @@ namespace AssessmentLibrary
                 commandTestCase.ActualReturnCode = status;
                 // TODO: do not assume that it actually finished
                 
-                SetResponseCode(commandTestCase, commandTestCase.ActualReturnCode, commandTestCase.TestCommand);
+                SetResponseCode(commandTestCase, commandTestCase.ActualReturnCode, combinedOutput);
 
                 //commandTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
                 //OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput,
@@ -207,7 +207,7 @@ namespace AssessmentLibrary
                         HTTPBaseClass BaseHttp = new HTTPBaseClass(httpTestCase.Username, httpTestCase.Password, httpTestCase.ProxyServer
                         , ReUri, "POST", collHeader);
                         webresponse = BaseHttp.GetFinalResponse(Cookie, false, true);//set auto redirect flag=true
-                        httpTestCase.Location = ReUri;                        
+                        httpTestCase.Location = ReUri;      
                     }
                     return true;
                 }
@@ -247,7 +247,7 @@ namespace AssessmentLibrary
                         }
                         catch (WebException exc)
                         {
-                            webresponse = (HttpWebResponse)e.Response;
+                            webresponse = (HttpWebResponse)exc.Response;
                             Console.WriteLine("Static proxy block :"+ exc.Message);
                         }
                     }
@@ -260,41 +260,82 @@ namespace AssessmentLibrary
                     {
                         resposeCode = (int)webresponse.StatusCode;
                         httpTestCase.ActualResponseCode = resposeCode;
-                        webresponse.Close();
-                    }                    
-                    SetResponseCode(httpTestCase, httpTestCase.ActualResponseCode, httpTestCase.Target);                                        
+                        webresponse.Close();                        
+                    }
+                    combinedOutput = string.Format("\t Connection result to {0} ", httpTestCase.Target);
+                    SetResponseCode(httpTestCase, httpTestCase.ActualResponseCode, combinedOutput);
                 }
             }             
             return true;
         }
 
-        private int GetRegistryStatus(string testCommand)
-        {
-            if(Registry.GetValue(testCommand, "SCCM client", null) == null)
+        //Check whether provided registry entry exists or not
+        private int CheckRegistryExists(string testCommand)
+        {   
+            string[] topNode = testCommand.Split(new[] { '\\' }, 2);
+            RegistryHive registryHive = RegistryHive.LocalMachine;
+
+            //Assign registry top-level node
+            switch(topNode[0].ToUpper())
             {
-                return -1; // No registry exits
+                case "HKEY_CLASSES_ROOT":
+                    registryHive = RegistryHive.ClassesRoot;
+                    break;
+                case "HKEY_CURRENT_USER":
+                    registryHive = RegistryHive.CurrentUser;
+                    break;
+                case "HKEY_LOCAL_MACHINE":
+                    registryHive = RegistryHive.LocalMachine;
+                    break;
+                case "HKEY_USERS":
+                    registryHive = RegistryHive.Users;
+                    break;
+                case "HKEY_CURRENT_CONFIG":
+                    registryHive = RegistryHive.CurrentConfig;
+                    break;
+                case "HKEY_DYN_DATA":
+                    registryHive = RegistryHive.DynData;
+                    break;
+                case "HKEY_PERFORMANCE_DATA":
+                    registryHive = RegistryHive.PerformanceData;
+                    break;
+                default:
+                    break;
             }
-            else
+
+            try
             {
-                return 0; // registry exits
+                RegistryKey localKey = RegistryKey.OpenBaseKey(registryHive, RegistryView.Registry64);
+                using (RegistryKey Key = localKey.OpenSubKey(topNode[1]))
+                {
+                    if (Key == null)
+                        return -1; // No registry exits
+                    else
+                        return 0; // registry exits
+                }
+            }
+            catch (Exception e)
+            {
+                return -1;
             }
         }
 
         //Get service status
-        //Expected status result is Running(4)
+        //Expected status result is Running i.e. 4
         private int GetServiceStatus(string serviceName)
         {
-            int status = 0;
+            int status = -1;
             try
             {
                 using (ServiceController sc = new ServiceController(serviceName))
-                {                    
-                    status = (int)sc.Status;                    
+                {
+                    status = (int)sc.Status;
                     return status;
                 }
             }
             catch (ArgumentException) { return status; }
             catch (Win32Exception) { return status; }
+            catch (Exception) { return status; }
         }
 
         private HttpWebRequest SendWebRequest(HTTPTestCase httpTestCase, string RequestMethod, NameValueCollection collHeader)
@@ -308,7 +349,7 @@ namespace AssessmentLibrary
                 && !string.IsNullOrEmpty(httpTestCase.Password)) ? true : false;
             return webrequest = BaseHttp.CreateWebRequest(isNetworkCred, allowRedirect);//false indicates: Http non-secure request            
         }
-        private void SetResponseCode(BaseTestCase HttpTestCase, int ActualResponseCode, string Target)
+        private void SetResponseCode(BaseTestCase baseTestCase, int ActualResponseCode, string output)
         {
             // ... Check Status Code                                
             //Console.WriteLine("Response StatusCode: " + HttpTestCase.ActualResponseCode);
@@ -319,12 +360,12 @@ namespace AssessmentLibrary
             OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput));
             //////// for now, just output
             //Console.WriteLine(combinedOutput);            
-            HttpTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
+            baseTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
 
             //////// TEST TEST
             //////// TODO: how to pull out http code
-            OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs("\t Connection result to "+ Target,
-                HttpTestCase.DidTestCasePass()));
+            OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(output,
+                baseTestCase.DidTestCasePass()));
             Console.WriteLine("----------------------------------------------------------------------");
         }
 
@@ -355,7 +396,6 @@ namespace AssessmentLibrary
             catch (Win32Exception ex)
             {
                 // WriteLog(ex);
-
             }
             catch (Exception ex)
             {

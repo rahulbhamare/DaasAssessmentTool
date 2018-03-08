@@ -1,5 +1,22 @@
 {
   "testcases": [
+    
+    {
+      "name": "DAAS agent registry HKLM\\SOFTWARE\\Policies\\Hewlett-Packard\\HP Touchpoint Manager\\",
+      "purpose": "RegistryStatus",
+      "type": "command",
+      "command": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Hewlett-Packard\\HP Touchpoint Manager\\",
+      "expected_response_code": 0,
+      "params": "Optional field."
+    },
+    {
+      "name": "DAAS agent registry HKLM\\SOFTWARE\\Hewlett-Packard\\HP Touchpoint Manager",
+      "purpose": "RegistryStatus",
+      "type": "command",
+      "command": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Hewlett-Packard\\HP Touchpoint Manager",
+      "expected_response_code": 0,
+      "params": "Optional field."
+    },
     {
       "name": "Installshield Installer logs",
       "purpose": "InstallExe",
@@ -34,7 +51,7 @@
     },
     {
       "name": "SCCM client registry",
-      "purpose": "Registry",
+      "purpose": "RegistryStatus",
       "type": "command",
       "command": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\SMS\\Mobile Client",
       "expected_response_code": 1,

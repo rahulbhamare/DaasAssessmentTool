@@ -52,15 +52,17 @@ namespace AssessmentLibrary
                 webrequest.Headers.Add(key, keyvalue);
             }
             webrequest.ContentType = "text/html";
-            //"application/x-www-form-urlencoded";
-            webrequest.Proxy = new WebProxy(ProxyServer);
-
+            WebProxy webProxy = new WebProxy(ProxyServer);
             if (NwCred)
             {
-                CredentialCache wrCache = new CredentialCache();
-                wrCache.Add(new Uri(RequestUri), "Basic", new NetworkCredential(UserName, UserPwd));
-                webrequest.Credentials = wrCache;
+                //CredentialCache wrCache = new CredentialCache();
+                //wrCache.Add(new Uri(RequestUri), "Basic", new NetworkCredential(UserName, UserPwd));
+                //webrequest.Credentials = CredentialCache.DefaultCredentials;
+
+                //Set proxy credentials                 
+                webProxy.Credentials = new NetworkCredential(UserName, UserPwd);                
             }
+            webrequest.Proxy = webProxy;
             //Remove collection elements
             Headers.Clear();
             return webrequest;

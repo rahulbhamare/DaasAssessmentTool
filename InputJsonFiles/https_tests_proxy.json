@@ -3,6 +3,17 @@
     {
       "name": "HP Daas",
       "type": "http",
+      "target": "http://www.google.com",
+      "port": 8080,
+      "proxyserver":"114.143.59.203:8080",
+      "username": "hpmobiliya",
+      "password": "HM#$56qw",
+      "expected_response_code": 302,
+      "notes": "Optional field."
+    },
+    {
+      "name": "HP Daas",
+      "type": "http",
       "target": "http://jenkins-server.lightaria.com:8080/login",      
       "port": 8080,
       "proxyserver":"web-proxy.in.hpicorp.net:8080",
