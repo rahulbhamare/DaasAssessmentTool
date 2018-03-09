@@ -178,7 +178,11 @@ namespace AssessmentLibrary
                     case "RegistryStatus":
                         status = CheckRegistryExists(commandTestCase.TestCommand);
                         combinedOutput = string.Format("\t {0} exists ", commandTestCase.TestName);
-                        break;                   
+                        break;
+                    case "ProcessStatus":
+                        status = GetProcessStatus(commandTestCase.TestCommand);
+                        combinedOutput = string.Format("\t {0} enrolled ", commandTestCase.TestName);
+                        break;
                     default:break;
                 }
                                  
@@ -213,7 +217,9 @@ namespace AssessmentLibrary
                 }
                 catch (WebException e)
                 {
-                    webresponse = (HttpWebResponse)e.Response;                    
+                    webresponse = (HttpWebResponse)e.Response;
+                    if(webresponse != null)
+                        httpTestCase.ActualResponseCode = (int)webresponse.StatusCode;
                     Console.WriteLine(e.Message);
 
                     // Obtain the 'Proxy' mentioned in the LAN settings
@@ -308,16 +314,13 @@ namespace AssessmentLibrary
                 RegistryKey localKey = RegistryKey.OpenBaseKey(registryHive, RegistryView.Registry64);
                 using (RegistryKey Key = localKey.OpenSubKey(topNode[1]))
                 {
-                    if (Key == null)
-                        return -1; // No registry exits
-                    else
-                        return 0; // registry exits
+                    if (Key != null)
+                        return 1; // registry exists
                 }
             }
             catch (Exception e)
-            {
-                return -1;
-            }
+            {            }
+            return -1;// registry not exists
         }
 
         //Get service status
@@ -330,12 +333,29 @@ namespace AssessmentLibrary
                 using (ServiceController sc = new ServiceController(serviceName))
                 {
                     status = (int)sc.Status;
-                    return status;
+                    if(status == 4)//Running
+                        return 1;
                 }
-            }
-            catch (ArgumentException) { return status; }
-            catch (Win32Exception) { return status; }
-            catch (Exception) { return status; }
+            }            
+            catch (Exception) {  }
+            return status;
+        }
+
+        //Get service status
+        //Expected status result is Running i.e. 4
+        private int GetProcessStatus(string processName)
+        {
+            try
+            {
+                Process[] pc = Process.GetProcessesByName(processName);
+                foreach(var item in pc)
+                {
+                    if (item.Responding)
+                        return 1;                    
+                }                
+            }            
+            catch (Exception) { }
+            return -1;
         }
 
         private HttpWebRequest SendWebRequest(HTTPTestCase httpTestCase, string RequestMethod, NameValueCollection collHeader)
@@ -351,19 +371,9 @@ namespace AssessmentLibrary
         }
         private void SetResponseCode(BaseTestCase baseTestCase, int ActualResponseCode, string output)
         {
-            // ... Check Status Code                                
-            //Console.WriteLine("Response StatusCode: " + HttpTestCase.ActualResponseCode);
-            //string combinedOutput = HttpTestCase.Target + "\r\n\r\n" + "HTTPWebRequest arguments:" + HttpTestCase.ActualResponseCode 
-            //    + "\r\n\r\n";
-            string combinedOutput = "Response StatusCode: " + ActualResponseCode;
-
+            string combinedOutput = "\t\n Response StatusCode: " + ActualResponseCode;
             OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput));
-            //////// for now, just output
-            //Console.WriteLine(combinedOutput);            
-            baseTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
-
-            //////// TEST TEST
-            //////// TODO: how to pull out http code
+            baseTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;            
             OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(output,
                 baseTestCase.DidTestCasePass()));
             Console.WriteLine("----------------------------------------------------------------------");
@@ -374,24 +384,23 @@ namespace AssessmentLibrary
             try
             {
                 // Get the current directory.
-//#if DEBUG
-//                //string filePath = Utils.GetInputFilePath(fileName);
-//                string filePath = fileName;
-//#else
-//                string filePath = fileName;
-//#endif
-
-                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                //#if DEBUG
+                //                //string filePath = Utils.GetInputFilePath(fileName);
+                //                string filePath = fileName;
+                //#else
+                //                string filePath = fileName;
+                //#endif
+                ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.UseShellExecute = false;
                 startInfo.CreateNoWindow = true;
                 startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 startInfo.FileName = fileName;
-                startInfo.Verb = "runas";                
+                startInfo.Verb = "runas";
                 startInfo.Arguments = parameters;
-                startInfo.ErrorDialog = true;                
+                startInfo.ErrorDialog = true;
                 Process process = System.Diagnostics.Process.Start(startInfo);
-                process.WaitForExit();                
-                return process.ExitCode;
+                process.WaitForExit();
+                return 1;
             }
             catch (Win32Exception ex)
             {

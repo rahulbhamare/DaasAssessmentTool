@@ -25,7 +25,7 @@ namespace AssessmentLibraryTest
             Assert.IsTrue(myTests[0] is CommandTestCase);
             CommandTestCase commandTestCase = myTests[0] as CommandTestCase;
             Assert.IsTrue(commandTestCase.TestCommand == "c:\\Some command.exe");
-            Assert.IsTrue(commandTestCase.ExpectedReturnCode == 0);
+            Assert.IsTrue(commandTestCase.ExpectedResponseCode == 0);
             Assert.IsTrue(commandTestCase.Params == "-param1 -param2 3");
         }
 

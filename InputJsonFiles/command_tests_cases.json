@@ -1,12 +1,35 @@
 {
   "testcases": [
-    
+    {
+      "name": "HP Device Health service",
+      "purpose": "ServiceStatus",
+      "type": "command",
+      "command": "HPDeviceHealthService",
+      "expected_response_code": 1,
+      "params": "Optional field."
+    },
+    {
+      "name": "LHAgent service",
+      "purpose": "ServiceStatus",
+      "type": "command",
+      "command": "hpLHAgent",
+      "expected_response_code": 1,
+      "params": "Optional field."
+    },
+    {
+      "name": "Tray process service",
+      "purpose": "ProcessStatus",
+      "type": "command",
+      "command": "HP Touchpoint Manager Tray",
+      "expected_response_code": 1,
+      "params": "Optional field."
+    },
     {
       "name": "DAAS agent registry HKLM\\SOFTWARE\\Policies\\Hewlett-Packard\\HP Touchpoint Manager\\",
       "purpose": "RegistryStatus",
       "type": "command",
       "command": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Hewlett-Packard\\HP Touchpoint Manager\\",
-      "expected_response_code": 0,
+      "expected_response_code": 1,
       "params": "Optional field."
     },
     {
@@ -14,7 +37,7 @@
       "purpose": "RegistryStatus",
       "type": "command",
       "command": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Hewlett-Packard\\HP Touchpoint Manager",
-      "expected_response_code": 0,
+      "expected_response_code": 1,
       "params": "Optional field."
     },
     {
@@ -22,7 +45,7 @@
       "purpose": "InstallExe",
       "type": "command",
       "command": "C:\\Setup.exe",
-      "expected_response_code": 0,
+      "expected_response_code": 1,
       "params" : "\/debuglog\"C:\\setupexe.log\""
     },
     {
@@ -30,7 +53,7 @@
       "purpose": "InstallExe",
       "type": "command",
       "command": "HPLogReportTool\\HPLogReportTool.exe",
-      "expected_response_code": 0,
+      "expected_response_code": 1,
       "params" : ""
     },
     {
@@ -38,11 +61,11 @@
       "purpose": "ServiceStatus",
       "type": "command",
       "command": "dmwappushservice",
-      "expected_response_code": 4,
+      "expected_response_code": 1,
       "params": "Optional field."
     },
     {
-      "name": "SCCM client registry",
+      "name": "SCCM client registry HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\SMS\\Mobile Client",
       "purpose": "RegistryStatus",
       "type": "command",
       "command": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\SMS\\Mobile Client",
@@ -50,7 +73,7 @@
       "params": "Optional field."
     },
     {
-      "name": "SCCM client registry",
+      "name": "SCCM client registry HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\SMS\\Mobile Client",
       "purpose": "RegistryStatus",
       "type": "command",
       "command": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\SMS\\Mobile Client",

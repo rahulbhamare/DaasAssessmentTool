@@ -1,17 +1,5 @@
 {
-  "configfiles": [        
-    {
-      "name": "Command test cases",
-      "purpose": "Command execution",
-      "path": "InputJsonFiles\\command_tests_cases.json",      
-      "type": "command"
-    },
-    {
-      "name": "AirWatch",
-      "purpose": "Connecting AirWatch end points :",
-      "path": "InputJsonFiles\\https_tests_airwatch.json",      
-      "type": "http"
-    },
+  "configfiles": [            
     {
       "name": "DAAS",
       "purpose": "Connecting DAAS end points :",
@@ -25,10 +13,22 @@
       "type": "http"
     },
     {
+      "name": "AirWatch",
+      "purpose": "Connecting AirWatch end points :",
+      "path": "InputJsonFiles\\https_tests_airwatch.json",      
+      "type": "http"
+    },    
+    {
       "name": "Proxy",
       "purpose": "Connecting end points through Proxies :",
       "path": "InputJsonFiles\\https_tests_proxy.json",
       "type": "http"
+    },
+    {
+      "name": "Command test cases",
+      "purpose": "Command execution",
+      "path": "InputJsonFiles\\command_tests_cases.json",      
+      "type": "command"
     }
   ]
 }
