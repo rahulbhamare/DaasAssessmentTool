@@ -391,7 +391,10 @@ namespace AssessmentLibrary
                 //                string filePath = fileName;
                 //#endif
                 ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.UseShellExecute = false;
+                if (fileName.Contains("HPLogReportTool"))//HPLogReportTool.exe is physically present in package folder
+                    startInfo.UseShellExecute = false;
+                else
+                    startInfo.UseShellExecute = true;
                 startInfo.CreateNoWindow = true;
                 startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 startInfo.FileName = fileName;
@@ -399,7 +402,7 @@ namespace AssessmentLibrary
                 startInfo.Arguments = parameters;
                 startInfo.ErrorDialog = true;
                 Process process = System.Diagnostics.Process.Start(startInfo);
-                process.WaitForExit();
+                process.WaitForExit(6000);
                 return 1;
             }
             catch (Win32Exception ex)
