@@ -6,6 +6,7 @@ It is used to,
 	       - Verify network connectivity using C# native Http classes
 	       - Connect end points using Auto detect, Static and Manual proxy settings
 	       - Generate TM client log zip at C:/ path
+	       - Generate Installshield logs at C:/ path
 
 ## Configuration file
 
