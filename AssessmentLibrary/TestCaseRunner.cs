@@ -389,12 +389,13 @@ namespace AssessmentLibrary
                 //                string filePath = fileName;
                 //#else
                 //                string filePath = fileName;
-                //#endif
+                //#endif                
+                //if (fileName.Contains("HPLogReportTool"))//HPLogReportTool.exe is physically present in package folder
+                //    startInfo.UseShellExecute = false;
+                //else
+
                 ProcessStartInfo startInfo = new ProcessStartInfo();
-                if (fileName.Contains("HPLogReportTool"))//HPLogReportTool.exe is physically present in package folder
-                    startInfo.UseShellExecute = false;
-                else
-                    startInfo.UseShellExecute = true;
+                startInfo.UseShellExecute = true;
                 startInfo.CreateNoWindow = true;
                 startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 startInfo.FileName = fileName;
