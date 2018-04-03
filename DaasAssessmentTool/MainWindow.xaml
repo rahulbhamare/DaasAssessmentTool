@@ -22,6 +22,6 @@
             <TextBox x:Name="ConsoleOutputTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
         </ScrollViewer>
         <Button x:Name="RunTestsButton" Grid.Row="1" Click="RunTestsButton_Click">Run Tests</Button>
-        <Button x:Name="SeeVerboseButton" Grid.Row="1" Grid.Column="1" Click="SeeVerboseButton_Click" IsEnabled="False" >Show Verbose Logs</Button>
+        <Button x:Name="SeeVerboseButton" Grid.Row="1" Grid.Column="1" Click="SeeVerboseButton_Click" IsEnabled="False" Visibility="Hidden">Show Verbose Logs</Button>
     </Grid>
 </Window>

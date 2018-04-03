@@ -148,7 +148,7 @@ namespace AssessmentLibrary
             // we'll use more advanced stuff later
             // probably will need to make a runner class still
             // for now jam it inline
-            Console.WriteLine("Running test case {0}", testCase.TestName);
+            //Console.WriteLine("Running test case {0}", testCase.TestName);
             // is a ref... right?
 
             string Cookie = string.Empty;
@@ -169,19 +169,19 @@ namespace AssessmentLibrary
                 {
                     case "InstallExe":
                         status = RunProcessAsAdmin(commandTestCase.TestCommand, commandTestCase.Params);
-                        combinedOutput = string.Format("\t {0} has been executed ", commandTestCase.TestName);
+                        combinedOutput = string.Format(" {0} has been executed ", commandTestCase.TestName);
                         break;
                     case "ServiceStatus":
                         status = GetServiceStatus(commandTestCase.TestCommand);
-                        combinedOutput = string.Format("\t {0} running ", commandTestCase.TestName);
+                        combinedOutput = string.Format(" {0} running ", commandTestCase.TestName);
                         break;
                     case "RegistryStatus":
                         status = CheckRegistryExists(commandTestCase.TestCommand);
-                        combinedOutput = string.Format("\t {0} exists ", commandTestCase.TestName);
+                        combinedOutput = string.Format(" {0} exists ", commandTestCase.TestName);
                         break;
                     case "ProcessStatus":
                         status = GetProcessStatus(commandTestCase.TestCommand);
-                        combinedOutput = string.Format("\t {0} enrolled ", commandTestCase.TestName);
+                        combinedOutput = string.Format(" {0} enrolled ", commandTestCase.TestName);
                         break;
                     default:break;
                 }
@@ -196,8 +196,7 @@ namespace AssessmentLibrary
                 //       commandTestCase.DidTestCasePass()));
             }
             else if (testCase is HTTPTestCase)
-            {
-                Console.WriteLine("Network (HTTP) test case");
+            {                
                 HTTPTestCase httpTestCase = testCase as HTTPTestCase;                
                 try
                 {  
@@ -266,9 +265,10 @@ namespace AssessmentLibrary
                     {
                         resposeCode = (int)webresponse.StatusCode;
                         httpTestCase.ActualResponseCode = resposeCode;
-                        webresponse.Close();                        
+                        webresponse.Close();
                     }
-                    combinedOutput = string.Format("\t Connection result to {0} ", httpTestCase.Target);
+                    combinedOutput = string.Format("Running test case {0}\nResponse StatusCode : {1}\n\tConnection result to {2}", httpTestCase.TestName, httpTestCase.ActualResponseCode, httpTestCase.Target);
+                    //string combinedOutput = "\n Connectionvresult to " + baseTestCase.TestName + ": " + baseTestCase.CaseStatus + "\n Response StatusCode: " + ActualResponseCode;
                     SetResponseCode(httpTestCase, httpTestCase.ActualResponseCode, combinedOutput);
                 }
             }             
@@ -370,12 +370,13 @@ namespace AssessmentLibrary
             return webrequest = BaseHttp.CreateWebRequest(isNetworkCred, allowRedirect);//false indicates: Http non-secure request            
         }
         private void SetResponseCode(BaseTestCase baseTestCase, int ActualResponseCode, string output)
-        {
-            string combinedOutput = "\t\n Response StatusCode: " + ActualResponseCode;
-            OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput));
-            baseTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;            
-            OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(output,
-                baseTestCase.DidTestCasePass()));
+        {            
+            //output += "\n Connection result to "+baseTestCase.TestName;
+            baseTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
+            var args = new TestCaseOutputEventArgs(output, baseTestCase.DidTestCasePass());                                    
+            //string combinedOutput = ""
+            //OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput));            
+            OnTestCaseOutputEventHandler(args);
             Console.WriteLine("----------------------------------------------------------------------");
         }
 

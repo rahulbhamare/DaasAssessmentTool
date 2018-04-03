@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -75,7 +76,7 @@ namespace DaasAssessmentTool
                 {
                     _testcasetype = item.TestCaseType;
                     string testResultString = string.Format(item.Purpose + "\r\n\r\n");
-                    //ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.FontWeight = FontWeights.Bold));
+                    ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.FontWeight = FontWeights.Bold));
                     ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.AppendText(testResultString)));
                     testCaseRunner = new TestCaseRunner(item.FilePath);
                     // make configurable?
@@ -84,8 +85,8 @@ namespace DaasAssessmentTool
                     testCaseRunner.TestCaseOutputEventHandler += TestCaseRunner_TestCaseOutputEventHandler;
                     //ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.FontWeight = FontWeights.Normal));
                     //TODO: hook up string streaming
-                    testCaseRunner.RunTestCases();
-                    testResultString = string.Format(item.TestName + " test case status : {0} \r\n\r\n", testCaseRunner.DidAllTestCasesPass());
+                    testCaseRunner.RunTestCases();                    
+                    testResultString = string.Format(item.TestName + " test case status : {0}\r\n\r\n", testCaseRunner.DidAllTestCasesPass());
                     ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.AppendText(testResultString)));
                 }
                 catch (Exception ex)
@@ -104,7 +105,7 @@ namespace DaasAssessmentTool
                     verboseOutput += e.ConsoleOuput;
                     break;
                 case TestCaseOutputEventArgs.OutputType.TestResult:
-                    ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.AppendText(e.ToString() + "\r\n\r\n")));
+                    ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.AppendText(e.ToString() + "\r\n\r\n----------------------------------\n\n")));
                     break;
             }
             //TODO: scroll to bottom
