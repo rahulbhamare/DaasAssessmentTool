@@ -3,25 +3,45 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DaasAssessmentTool"
+        xmlns:vm="clr-namespace:DaasAssessmentTool.ViewModel"
+        ResizeMode="NoResize"
         mc:Ignorable="d"
-        Title="HP DaaS Network Readiness Tool" Height="500" Width="525">
+        Title="HP DaaS Network Readiness Tool" Height="630" Width="930" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <vm:TestResultViewModel x:Name="TestResultVM" x:FieldModifier="public"/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}" x:Key="ColumnTextWrapSyle">
+            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+            <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="1*" MinHeight="40"/>
         </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <ScrollViewer HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                      Width="Auto"                   
-                      Height="Auto">
-            <TextBox x:Name="ConsoleOutputTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        </ScrollViewer>
-        <Button x:Name="RunTestsButton" Grid.Row="1" Click="RunTestsButton_Click">Run Tests</Button>
-        <Button x:Name="SeeVerboseButton" Grid.Row="1" Grid.Column="1" Click="SeeVerboseButton_Click" IsEnabled="False" Visibility="Hidden">Show Verbose Logs</Button>
+
+        <DataGrid x:Name="TestCaseDataGrid" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding TestResultObservableCollection}"
+                AutoGenerateColumns="False" CanUserAddRows="False">            
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Target}" Header="Target" FontWeight="Bold" MaxWidth="225" ElementStyle="{StaticResource ColumnTextWrapSyle}"/>
+                <DataGridTextColumn Binding="{Binding Path=ProxyURL}" Header="ProxyURL" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding Path=ProxyType}" Header="ProxyType" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding Path=InputJsonFileName}" Header="InputJsonFileName" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding Path=ExpectedStatusCode}" Header="ExpectedStatusCode" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding Path=ActualStatusCode}" Header="ActualStatusCode" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding Path=Result}" Header="Result" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding Path=Description}" Header="Description" FontWeight="Bold" MaxWidth="325" ElementStyle="{StaticResource ColumnTextWrapSyle}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="RunTestsButton" Click="RunTestsButton_Click" Width="200" Height="60" Margin="4,0,10,0">Run Tests</Button>
+            <Button x:Name="ExportDataButton" Click="ExportDataButton_Click" Width="200" Height="60" IsEnabled="False">Export</Button>
+        </StackPanel>
     </Grid>
 </Window>

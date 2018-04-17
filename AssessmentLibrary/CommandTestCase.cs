@@ -13,7 +13,7 @@ namespace AssessmentLibrary
     public class CommandTestCase : BaseTestCase
     {        
         [JsonProperty("command")]
-        public string TestCommand
+        public string Target
         {
             get;
             private set;
@@ -40,14 +40,25 @@ namespace AssessmentLibrary
             private set;
         }
 
+        public override string TestCaseType
+        {
+            get
+            {
+                return "command";
+            }
+        }
+
         public int ActualReturnCode
         {
             get;
             set;
         }
 
-        public override string TestCaseType => throw new NotImplementedException();
-
+        public string Description
+        {
+            get;
+            set;
+        }
         public override bool DidTestCasePass()
         {
             return CaseStatus == TestCaseStatus.FINISHED &&

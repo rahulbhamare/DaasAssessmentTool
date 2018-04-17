@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static AssessmentLibrary.BaseTestCase;
+using static AssessmentLibrary.TestCaseRunner;
 
 namespace AssessmentLibrary
 {
@@ -21,26 +23,30 @@ namespace AssessmentLibrary
         //public int TestResult { get; private set; }
         public bool TestCasePass { get; private set; }
 
-        public string TargetUrl { get; private set; }
+        //public string TargetUrl { get; private set; }
+        public TestCaseResult TestCaseResult { get; private set; }
 
-        public TestCaseOutputEventArgs(string consoleOutput)
-        {
-            ConsoleOuput = consoleOutput;
-            TestCaseOutputType = OutputType.Verbose;
-        }
+        //public TestCaseOutputEventArgs(string consoleOutput)
+        //{
+        //    ConsoleOuput = consoleOutput;
+        //    TestCaseOutputType = OutputType.Verbose;
+        //}
 
-        public TestCaseOutputEventArgs(string url, bool result)
+        public TestCaseOutputEventArgs(TestCaseResult _testCaseResult)
         {
-            TestCasePass = result;
-            TargetUrl = url;
             TestCaseOutputType = OutputType.TestResult;
+            TestCaseResult = _testCaseResult;
+            //TestCasePass = result;
+            //TargetUrl = url;
+            //TestCaseOutputType = OutputType.TestResult;
         }
 
         public override string ToString()
         {
             if(TestCaseOutputType == OutputType.TestResult)
             {
-                return string.Format("{0} : {1}",TargetUrl, TestCasePass);
+                //return string.Format("{0} : {1}",TargetUrl, TestCasePass);
+                return null;
             }
             else
             {

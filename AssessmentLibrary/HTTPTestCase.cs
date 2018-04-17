@@ -24,6 +24,12 @@ namespace AssessmentLibrary
             private set;
         }
 
+        public string Description
+        {
+            get;
+            set;
+        }
+
         [JsonProperty("follow_redirect")]
         public bool FollowRedirect { get; private set; } = false;
 

@@ -1,23 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
+using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.ServiceProcess;
+using System.Net.NetworkInformation;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using AssessmentLibrary;
+using AssessmentLibrary.Logs;
+using log4net;
+using static AssessmentLibrary.TestCaseRunner;
 
 namespace DaasAssessmentTool
 {
@@ -27,46 +22,73 @@ namespace DaasAssessmentTool
     public partial class MainWindow : Window
     {
         private TestCaseRunner testCaseRunner;
-
-        private string verboseOutput = string.Empty;
-
-        private TestVerboseWindow verboseWindow = null;
+        private static readonly ILog LOG = LogManager.GetLogger(typeof(MainWindow));
 
         public MainWindow()
         {
             InitializeComponent();
-            verboseWindow = new TestVerboseWindow();
+            
+            //Initialize logs
+            DaasToolLogManagement.InitializeLog();
 
             #region Zip TM client Log option with Verbose logging on Readiness Tool
             //RunProcessAsAdmin("HPLogReportTool\\HPLogReportTool.exe", "");
             #endregion
         }
 
+        // Check internet connectivity status changed
+        private static bool IsNetworkAvailable()
+        {
+            // only recognizes changes related to Internet adapters
+            if (NetworkInterface.GetIsNetworkAvailable())
+            {
+                // however, this will include all adapters
+                NetworkInterface[] interfaces =
+                    NetworkInterface.GetAllNetworkInterfaces();
+
+                foreach (NetworkInterface face in interfaces)
+                {
+                    // filter so we see only Internet adapters
+                    if (face.OperationalStatus == OperationalStatus.Up)
+                    {
+                        if ((face.NetworkInterfaceType != NetworkInterfaceType.Tunnel) &&
+                            (face.NetworkInterfaceType != NetworkInterfaceType.Loopback))
+                        {
+                            IPv4InterfaceStatistics statistics =
+                                face.GetIPv4Statistics();
+
+                            // all testing seems to prove that once an interface
+                            // comes online it has already accrued statistics for
+                            // both received and sent...
+
+                            if ((statistics.BytesReceived > 0) &&
+                                (statistics.BytesSent > 0))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+        }
         private async void RunTestsButton_Click(object sender, RoutedEventArgs e)
         {
-            verboseOutput = string.Empty;
-            ConsoleOutputTextBox.Text = "Running test cases \r\n\r\n";
-            await Task.Run(() => RunTests());
-
-            /*
-             * idea - two tabs, one for high level overview, one for raw/verbose
-             * OR just store in string, pop up window with export(or just export)             
-             */
+            if (!IsNetworkAvailable())
+                MessageBox.Show("You are not connected to the Internet, please connect to internet and try again.", " Internet status");
+            else
+                await Task.Run(() => RunTests());
         }
 
         private void EnableButtons(bool enableButtons)
         {
             //todo: any way to do all? or more elegantly?
-            RunTestsButton.Dispatcher.Invoke(new Action(() => RunTestsButton.IsEnabled = enableButtons));
-            SeeVerboseButton.Dispatcher.Invoke(new Action(() => SeeVerboseButton.IsEnabled = enableButtons));
+            RunTestsButton.Dispatcher.InvokeAsync(new Action(() => RunTestsButton.IsEnabled = enableButtons));
+            ExportDataButton.Dispatcher.InvokeAsync(new Action(() => ExportDataButton.IsEnabled = enableButtons));
         }
 
-        private void RunTests()
-        {
-            if(verboseWindow.IsVisible)
-            {
-                verboseWindow.Hide();                
-            }
+        private async void RunTests()
+        {   
             EnableButtons(false);
             List<ConfigFile> lstConfigFiles = BaseTestCase.LoadConfigFile("config_file.json");
             string _testcasetype = string.Empty;
@@ -76,46 +98,60 @@ namespace DaasAssessmentTool
                 {
                     _testcasetype = item.TestCaseType;
                     string testResultString = string.Format(item.Purpose + "\r\n\r\n");
-                    ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.FontWeight = FontWeights.Bold));
-                    ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.AppendText(testResultString)));
                     testCaseRunner = new TestCaseRunner(item.FilePath);
-                    // make configurable?
-                    //Replace curl with C# default httpWebRequest API
-                    //testCaseRunner.PathToCurl = "curl.exe";
                     testCaseRunner.TestCaseOutputEventHandler += TestCaseRunner_TestCaseOutputEventHandler;
-                    //ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.FontWeight = FontWeights.Normal));
-                    //TODO: hook up string streaming
-                    testCaseRunner.RunTestCases();                    
-                    testResultString = string.Format(item.TestName + " test case status : {0}\r\n\r\n", testCaseRunner.DidAllTestCasesPass());
-                    ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.AppendText(testResultString)));
+                    testCaseRunner.RunTestCases();
                 }
                 catch (Exception ex)
                 {
-                    ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.AppendText(string.Format("\t" + ex.Message + "\r\n\r\n"))));
+                    await Dispatcher.InvokeAsync(new Action(() =>
+                    TestResultVM.TestResultObservableCollection.Add(new TestCaseResult
+                    {
+                        Target = item.TestName,
+                        InputJsonFileName = item.FilePath,
+                        Result = "Fail",
+                        Description = ex.Message
+                    })));
                 }
             }            
             EnableButtons(true);
         }
-
-        private void TestCaseRunner_TestCaseOutputEventHandler(object sender, TestCaseOutputEventArgs e)
+        private async void TestCaseRunner_TestCaseOutputEventHandler(object sender, TestCaseOutputEventArgs e)
         {
-            switch(e.TestCaseOutputType)
+            switch (e.TestCaseOutputType)
             {
-                case TestCaseOutputEventArgs.OutputType.Verbose:
-                    verboseOutput += e.ConsoleOuput;
-                    break;
+                //case TestCaseOutputEventArgs.OutputType.Verbose:
+                //    verboseOutput += e.ConsoleOuput;
+                //    break;
                 case TestCaseOutputEventArgs.OutputType.TestResult:
-                    ConsoleOutputTextBox.Dispatcher.Invoke(new Action(() => ConsoleOutputTextBox.AppendText(e.ToString() + "\r\n\r\n----------------------------------\n\n")));
+                    await Dispatcher.InvokeAsync(new Action(() =>
+                    TestResultVM.TestResultObservableCollection.Add(new TestCaseResult
+                    {
+                        Target = e.TestCaseResult.Target,
+                        ProxyURL = e.TestCaseResult.ProxyURL,
+                        ProxyType = e.TestCaseResult.ProxyType,
+                        InputJsonFileName = e.TestCaseResult.InputJsonFileName,
+                        ExpectedStatusCode = e.TestCaseResult.ExpectedStatusCode,
+                        ActualStatusCode = e.TestCaseResult.ActualStatusCode,
+                        Result = e.TestCaseResult.Result,
+                        Description = e.TestCaseResult.Description
+                    })));
                     break;
             }
-            //TODO: scroll to bottom
         }
-
-        private void SeeVerboseButton_Click(object sender, RoutedEventArgs e)
+        private void ExportDataButton_Click(object sender, RoutedEventArgs e)
         {
-            verboseWindow.VerboseOutput = verboseOutput;
-            verboseWindow.TestResultOutput = ConsoleOutputTextBox.Text;
-            verboseWindow.Show();
-        }        
+            //ExportToExcel<TestCaseResult, ObservableCollection<TestCaseResult>> s = new ExportToExcel<TestCaseResult, ObservableCollection<TestCaseResult>>();
+            //s.dataToPrint = TestResultVM.TestResultObservableCollection;
+            //s.GenerateReport();
+            string filename = "TestCaseResult" + DateTime.Now.ToString("yyyy''MM''dd'T'HH''mm''ss")+".csv";
+            TestCaseDataGrid.SelectAllCells();
+            TestCaseDataGrid.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+            ApplicationCommands.Copy.Execute(null, TestCaseDataGrid);
+            TestCaseDataGrid.UnselectAllCells();
+            string LivePreviewText = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
+            File.AppendAllText(filename, LivePreviewText, UnicodeEncoding.UTF8);
+            MessageBox.Show(string.Format("Test case data has been exported to {0} file in current directory",filename));
+        }
     }    
 }

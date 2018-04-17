@@ -9,6 +9,8 @@ using System.Linq;
 using System.Net;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading.Tasks;
+using static AssessmentLibrary.BaseTestCase;
 //using System.Threading.Tasks;
 
 namespace AssessmentLibrary
@@ -32,6 +34,8 @@ namespace AssessmentLibrary
             set;
         }
 
+        public static string InputFileName = string.Empty;
+
         public event EventHandler<TestCaseOutputEventArgs> TestCaseOutputEventHandler;
 
         // runner array to track process?
@@ -43,11 +47,10 @@ namespace AssessmentLibrary
         {
             TestCaseOutputEventHandler?.Invoke(this, e);
         }
-
         public TestCaseRunner() { }
-
         public TestCaseRunner(string testCasesPath)
         {
+            InputFileName = testCasesPath;
             testCases = BaseTestCase.LoadTests(testCasesPath);
             RunInSystemContext = false;
         }
@@ -139,61 +142,65 @@ namespace AssessmentLibrary
 
         // todo: async
         #endregion
-
-
+            
         #region Newly added : HTTPClient patch
         private bool RunTestCase(BaseTestCase testCase)
         {
-            // for now, keep it simple
-            // we'll use more advanced stuff later
-            // probably will need to make a runner class still
-            // for now jam it inline
-            //Console.WriteLine("Running test case {0}", testCase.TestName);
-            // is a ref... right?
-
             string Cookie = string.Empty;
             string ReUri = string.Empty;
             string combinedOutput = string.Empty;
+
             NameValueCollection collHeader = new NameValueCollection();
             HttpWebResponse webresponse = null;
-            HttpWebRequest webrequest = null;
-
+            
             if (testCase is CommandTestCase)
             {
-                //TODO: redirect output?
-                //Console.WriteLine("Command test case");
                 CommandTestCase commandTestCase = testCase as CommandTestCase;
                 int status = 0;
-
+                Dictionary<string, object> result = new Dictionary<string, object>();
                 switch (commandTestCase.Purpose)
                 {
                     case "InstallExe":
-                        status = RunProcessAsAdmin(commandTestCase.TestCommand, commandTestCase.Params);
-                        combinedOutput = string.Format(" {0} has been executed ", commandTestCase.TestName);
+                        status = RunProcessAsAdmin(commandTestCase.Target, commandTestCase.Params);
+                        if (status == 1)
+                            combinedOutput = "Logs has been created at C:\\ path";
                         break;
                     case "ServiceStatus":
-                        status = GetServiceStatus(commandTestCase.TestCommand);
-                        combinedOutput = string.Format(" {0} running ", commandTestCase.TestName);
+                        ServiceControllerStatus serviceControllerStatus =  GetServiceStatus(commandTestCase.Target);
+                        if (serviceControllerStatus == ServiceControllerStatus.Running)                        
+                            status = 1;                        
+                        else
+                            status = -1;
+                        combinedOutput = string.Format("Service status : {0} ", serviceControllerStatus);
                         break;
                     case "RegistryStatus":
-                        status = CheckRegistryExists(commandTestCase.TestCommand);
-                        combinedOutput = string.Format(" {0} exists ", commandTestCase.TestName);
+                        result = CheckRegistryExists(commandTestCase.Target);
+                        if (result.Count > 0)
+                        {
+                            status = 1;
+                            combinedOutput = "Registry contains following entries :";
+                            foreach (var item in result)
+                                combinedOutput += string.Format("(Key- {0}: Value- {1}) ",item.Key,item.Value);
+                        }
+                        else
+                            status = -1;
                         break;
                     case "ProcessStatus":
-                        status = GetProcessStatus(commandTestCase.TestCommand);
-                        combinedOutput = string.Format(" {0} enrolled ", commandTestCase.TestName);
+                        status = GetProcessStatus(commandTestCase.Target);
                         break;
                     default:break;
                 }
                                  
                 commandTestCase.ActualReturnCode = status;
-                // TODO: do not assume that it actually finished
-                
-                SetResponseCode(commandTestCase, commandTestCase.ActualReturnCode, combinedOutput);
+                commandTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
+                commandTestCase.Description = combinedOutput;
+                SetResponseCode(commandTestCase);
 
-                //commandTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
-                //OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput,
-                //       commandTestCase.DidTestCasePass()));
+                //Console ouput                 
+                combinedOutput = string.Format("Running test case {0}\nResponse StatusCode : {1}\n\tConnection result to {2} : {3}",
+                    commandTestCase.TestName, commandTestCase.ActualReturnCode, commandTestCase.Target,
+                    (commandTestCase.ExpectedResponseCode == commandTestCase.ActualReturnCode) ? "Pass" : "Fail");
+                Console.WriteLine(combinedOutput);
             }
             else if (testCase is HTTPTestCase)
             {                
@@ -220,13 +227,12 @@ namespace AssessmentLibrary
                     if(webresponse != null)
                         httpTestCase.ActualResponseCode = (int)webresponse.StatusCode;
                     Console.WriteLine(e.Message);
-
+                    httpTestCase.Description = "Exception message :\n" + e.Message;
                     // Obtain the 'Proxy' mentioned in the LAN settings
                     string defaultProxy = WebRequest.DefaultWebProxy.
                                 GetProxy(new Uri(httpTestCase.Target)).Authority;
                     if (!string.IsNullOrEmpty(defaultProxy))
                     {
-                        httpTestCase.ProxyServer = defaultProxy;                        
                         try
                         {                            
                             webresponse = (HttpWebResponse)SendWebRequest(httpTestCase, "GET", collHeader).GetResponse();
@@ -236,15 +242,14 @@ namespace AssessmentLibrary
                         {
                             webresponse = (HttpWebResponse)ex.Response;
                             Console.WriteLine("Default proxy block :"+ ex.Message);
+                            httpTestCase.Description = ex.Message;
                         }
                     }
-
                     // Obtain the 'Proxy' mentioned in the Default browser
                     string staticProxy = WebRequest.GetSystemWebProxy().
                                 GetProxy(new Uri(httpTestCase.Target)).Authority;
                     if (!string.IsNullOrEmpty(staticProxy))                    
                     {
-                        httpTestCase.ProxyServer = staticProxy;                        
                         try
                         {
                             webresponse = (HttpWebResponse)SendWebRequest(httpTestCase, "GET", collHeader).GetResponse();                            
@@ -254,6 +259,7 @@ namespace AssessmentLibrary
                         {
                             webresponse = (HttpWebResponse)exc.Response;
                             Console.WriteLine("Static proxy block :"+ exc.Message);
+                            httpTestCase.Description = exc.Message;
                         }
                     }
                 }
@@ -267,16 +273,20 @@ namespace AssessmentLibrary
                         httpTestCase.ActualResponseCode = resposeCode;
                         webresponse.Close();
                     }
-                    combinedOutput = string.Format("Running test case {0}\nResponse StatusCode : {1}\n\tConnection result to {2}", httpTestCase.TestName, httpTestCase.ActualResponseCode, httpTestCase.Target);
-                    //string combinedOutput = "\n Connectionvresult to " + baseTestCase.TestName + ": " + baseTestCase.CaseStatus + "\n Response StatusCode: " + ActualResponseCode;
-                    SetResponseCode(httpTestCase, httpTestCase.ActualResponseCode, combinedOutput);
+                    //Console ouput 
+                    combinedOutput = string.Format("Running test case {0}\nResponse StatusCode : {1}\n\tConnection result to {2} : {3}",
+                    httpTestCase.TestName, httpTestCase.ActualResponseCode, httpTestCase.Target,
+                    (httpTestCase.ExpectedResponseCode == httpTestCase.ActualResponseCode) ? "Pass" : "Fail");
+                    Console.WriteLine(combinedOutput);
+                    
+                    SetResponseCode(httpTestCase);
                 }
             }             
             return true;
         }
 
         //Check whether provided registry entry exists or not
-        private int CheckRegistryExists(string testCommand)
+        private Dictionary<string, object> CheckRegistryExists(string testCommand)
         {   
             string[] topNode = testCommand.Split(new[] { '\\' }, 2);
             RegistryHive registryHive = RegistryHive.LocalMachine;
@@ -311,34 +321,34 @@ namespace AssessmentLibrary
 
             try
             {
+                Dictionary<string, object> keyValuePairs;
                 RegistryKey localKey = RegistryKey.OpenBaseKey(registryHive, RegistryView.Registry64);
-                using (RegistryKey Key = localKey.OpenSubKey(topNode[1]))
+                using (RegistryKey settingsRegKey = localKey.OpenSubKey(topNode[1]))
                 {
-                    if (Key != null)
-                        return 1; // registry exists
+                    var valueNames = settingsRegKey.GetValueNames();
+                    keyValuePairs = valueNames.ToDictionary(name => name, settingsRegKey.GetValue);
                 }
+                return keyValuePairs;
             }
             catch (Exception e)
             {            }
-            return -1;// registry not exists
+            return new Dictionary<string, object>();// registry not exists
         }
 
         //Get service status
         //Expected status result is Running i.e. 4
-        private int GetServiceStatus(string serviceName)
+        private ServiceControllerStatus GetServiceStatus(string serviceName)
         {
-            int status = -1;
+            ServiceControllerStatus serviceControllerStatus = ServiceControllerStatus.Stopped;
             try
             {
                 using (ServiceController sc = new ServiceController(serviceName))
                 {
-                    status = (int)sc.Status;
-                    if(status == 4)//Running
-                        return 1;
+                    serviceControllerStatus = sc.Status;
                 }
             }            
             catch (Exception) {  }
-            return status;
+            return serviceControllerStatus;
         }
 
         //Get service status
@@ -369,14 +379,43 @@ namespace AssessmentLibrary
                 && !string.IsNullOrEmpty(httpTestCase.Password)) ? true : false;
             return webrequest = BaseHttp.CreateWebRequest(isNetworkCred, allowRedirect);//false indicates: Http non-secure request            
         }
-        private void SetResponseCode(BaseTestCase baseTestCase, int ActualResponseCode, string output)
-        {            
-            //output += "\n Connection result to "+baseTestCase.TestName;
+        private void SetResponseCode(BaseTestCase baseTestCase)
+        {
+            HTTPTestCase httpTestCase = null;
+            CommandTestCase commandTestCase = null;
+            TestCaseOutputEventArgs testCaseOutputEventArgs;
             baseTestCase.CaseStatus = BaseTestCase.TestCaseStatus.FINISHED;
-            var args = new TestCaseOutputEventArgs(output, baseTestCase.DidTestCasePass());                                    
-            //string combinedOutput = ""
-            //OnTestCaseOutputEventHandler(new TestCaseOutputEventArgs(combinedOutput));            
-            OnTestCaseOutputEventHandler(args);
+            InputFileName = InputFileName.Substring(InputFileName.IndexOf('\\') + 1);
+            if (baseTestCase.TestCaseType == "http")
+            {
+                httpTestCase = (HTTPTestCase)baseTestCase;
+                testCaseOutputEventArgs = new TestCaseOutputEventArgs(new TestCaseResult
+                {
+                    Target = httpTestCase.Target,
+                    ProxyURL = httpTestCase.ProxyServer,
+                    ProxyType = (!string.IsNullOrEmpty(httpTestCase.ProxyServer) ? "Manual" : "Static"),
+                    InputJsonFileName = InputFileName,
+                    ExpectedStatusCode = httpTestCase.ExpectedResponseCode,
+                    ActualStatusCode = httpTestCase.ActualResponseCode,
+                    Result = (httpTestCase.ExpectedResponseCode == httpTestCase.ActualResponseCode) ? "Pass" : "Fail",
+                    Description = httpTestCase.Description
+                });
+            }
+            else
+            {
+                commandTestCase = (CommandTestCase)baseTestCase;
+                testCaseOutputEventArgs = new TestCaseOutputEventArgs(new TestCaseResult
+                {
+                    Target = commandTestCase.Target,
+                    InputJsonFileName = InputFileName,
+                    ExpectedStatusCode = commandTestCase.ExpectedResponseCode,
+                    ActualStatusCode = commandTestCase.ActualReturnCode,
+                    Result = (commandTestCase.ExpectedResponseCode == commandTestCase.ActualReturnCode) ? "Pass" : "Fail",
+                    Description = commandTestCase.Description
+                });
+            }
+
+            OnTestCaseOutputEventHandler(testCaseOutputEventArgs);
             Console.WriteLine("----------------------------------------------------------------------");
         }
 
@@ -445,6 +484,18 @@ namespace AssessmentLibrary
                 }
             }
             return true;
+        }
+
+        public class TestCaseResult
+        {
+            public string Target { get; set; }
+            public string ProxyURL { get; set; }
+            public string ProxyType { get; set; }
+            public string InputJsonFileName { get; set; }
+            public int ExpectedStatusCode { get; set; }
+            public int ActualStatusCode { get; set; }
+            public string Result { get; set; }//Pass or Fail
+            public string Description { get; set; }
         }
     }
 }

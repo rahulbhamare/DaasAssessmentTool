@@ -34,6 +34,7 @@ namespace AssessmentLibrary
             get;
             set;
         }
+        [JsonProperty("type")]
         public abstract string TestCaseType
         {
             get;
